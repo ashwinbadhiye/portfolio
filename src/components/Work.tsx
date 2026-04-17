@@ -1,143 +1,62 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import "./styles/Work.css";
-import WorkImage from "./WorkImage";
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
-
-const projects = [
-  {
-    title: "CallHQ",
-    category: "Voice AI Calling Platform",
-    tools: "Voice AI, Calling Automation, CRM Integrations",
-    image: "/images/callhq.png",
-    link: "https://callhq.ai",
-  },
-  {
-    title: "Whatsapp Automation",
-    category: "WABA Application",
-    tools: "WhatsApp Business API, Workflow Automation, Notifications",
-    image: "/images/whatsapp.png",
-    link: "https://whatsapp.callhq.ai",
-  },
-  {
-    title: "Broki",
-    category: "Real Estate Platform for FnB Industry",
-    tools: "Property Discovery, Lead Management, Marketplace Workflows",
-    image: "/images/broki.png",
-    link: "https://broki.in",
-  },
-  {
-    title: "Orrdr.com",
-    category: "Ecommerce Platform and Mobile App",
-    tools: "Ecommerce, Mobile Experience, Order Management",
-    image: "/images/orrdr.png",
-    link: "https://orrdr.com",
-  },
-];
+import { projects } from "../data/projects";
 
 const Work = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [activeFilter, setActiveFilter] = useState("all");
 
-  const goToSlide = useCallback(
-    (index: number) => {
-      if (isAnimating) return;
-      setIsAnimating(true);
-      setCurrentIndex(index);
-      setTimeout(() => setIsAnimating(false), 500);
-    },
-    [isAnimating]
-  );
+  const categories = ["all", "websites", "web apps", "ai and automation"];
 
-  const goToPrev = useCallback(() => {
-    const newIndex =
-      currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
-    goToSlide(newIndex);
-  }, [currentIndex, goToSlide]);
-
-  const goToNext = useCallback(() => {
-    const newIndex =
-      currentIndex === projects.length - 1 ? 0 : currentIndex + 1;
-    goToSlide(newIndex);
-  }, [currentIndex, goToSlide]);
+  const filteredProjects = activeFilter === "all"
+    ? projects
+    : projects.filter(project => project.tags.includes(activeFilter));
 
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
-        <h2>
-          My <span>Work</span>
-        </h2>
-
-        <div className="carousel-wrapper">
-          {/* Navigation Arrows */}
-          <button
-            className="carousel-arrow carousel-arrow-left"
-            onClick={goToPrev}
-            aria-label="Previous project"
-            data-cursor="disable"
-          >
-            <MdArrowBack />
-          </button>
-          <button
-            className="carousel-arrow carousel-arrow-right"
-            onClick={goToNext}
-            aria-label="Next project"
-            data-cursor="disable"
-          >
-            <MdArrowForward />
-          </button>
-
-          {/* Slides */}
-          <div className="carousel-track-container">
-            <div
-              className="carousel-track"
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-              }}
-            >
-              {projects.map((project, index) => (
-                <div className="carousel-slide" key={index}>
-                  <div className="carousel-content">
-                    <div className="carousel-info">
-                      <div className="carousel-number">
-                        <h3>0{index + 1}</h3>
-                      </div>
-                      <div className="carousel-details">
-                        <h4>{project.title}</h4>
-                        <p className="carousel-category">
-                          {project.category}
-                        </p>
-                        <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
-                          <p>{project.tools}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-image-wrapper">
-                      <WorkImage
-                        image={project.image}
-                        alt={project.title}
-                        link={project.link}
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Dot Indicators */}
-          <div className="carousel-dots">
-            {projects.map((_, index) => (
+        <div className="work-header">
+          <h2>
+            My <span>Work</span>
+          </h2>
+          <div className="work-filters">
+            {categories.map((category) => (
               <button
-                key={index}
-                className={`carousel-dot ${index === currentIndex ? "carousel-dot-active" : ""
-                  }`}
-                onClick={() => goToSlide(index)}
-                aria-label={`Go to project ${index + 1}`}
+                key={category}
+                className={`filter-btn ${activeFilter === category ? "active" : ""}`}
+                onClick={() => setActiveFilter(category)}
                 data-cursor="disable"
-              />
+              >
+                {category.toUpperCase()}
+              </button>
             ))}
           </div>
+        </div>
+
+        <div className="projects-grid">
+          {filteredProjects.map((project, index) => (
+            <div className="project-box" key={index}>
+              <div className="project-image-container">
+                <img src={project.image} alt={project.title} />
+                <div className="project-overlay">
+                  <a href={project.link} target="_blank" rel="noreferrer" className="visit-btn">
+                    Visit Site
+                  </a>
+                </div>
+              </div>
+              <div className="project-info">
+                <h4>{project.title}</h4>
+                <p>{project.description}</p>
+                <div className="project-tools">
+                   {project.tools.map((tool, i) => (
+                     <span key={i} className="tool-tag">{tool}</span>
+                   ))}
+                </div>
+              </div>
+            </div>
+          ))}
+          {filteredProjects.length === 0 && (
+            <p className="no-projects">Stay tuned! Exciting projects in this category are coming soon.</p>
+          )}
         </div>
       </div>
     </div>

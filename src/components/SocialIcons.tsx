@@ -61,7 +61,7 @@ const SocialIcons = () => {
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
           <a
-            href="https://github.com/akashrmalhotra"
+            href="https://github.com/ashwinbadhiye"
             target="_blank"
             rel="noreferrer"
           >
@@ -70,7 +70,7 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://www.linkedin.com/in/akashrmalhotra/"
+            href="https://www.linkedin.com/in/ashwinbadhiye/"
             target="_blank"
             rel="noreferrer"
           >
@@ -79,7 +79,7 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://www.youtube.com/@Leftbraincoder"
+            href="https://www.youtube.com/@Cris7ianoYT"
             target="_blank"
             rel="noreferrer"
           >
@@ -88,7 +88,7 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://www.instagram.com/leftbraincoder/"
+            href="https://www.instagram.com/ashweencr7/"
             target="_blank"
             rel="noreferrer"
           >
@@ -98,7 +98,7 @@ const SocialIcons = () => {
       </div>
       <a
         className="resume-button"
-        href="/Akash_Malhotra.pdf"
+        href="/AshwinBadhiye.pdf"
         target="_blank"
         rel="noreferrer"
       >
