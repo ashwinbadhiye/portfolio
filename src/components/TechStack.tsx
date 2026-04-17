@@ -30,7 +30,7 @@ const imageUrls = [
   "images/git.png",
   "images/tailwind.png",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+const textures = imageUrls.map((url) => textureLoader.load(import.meta.env.BASE_URL + url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
@@ -207,7 +207,7 @@ const TechStack = () => {
           ))}
         </Physics>
         <Environment
-          files="models/char_enviorment.hdr"
+          files={import.meta.env.BASE_URL + "models/char_enviorment.hdr"}
           environmentIntensity={0.5}
           environmentRotation={[0, 4, 2]}
         />
