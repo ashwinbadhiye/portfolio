@@ -11,6 +11,8 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
+import { getAssetPath } from "../utils/path";
+
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
   "images/react2.webp",
@@ -30,7 +32,7 @@ const imageUrls = [
   "images/git.png",
   "images/tailwind.png",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(import.meta.env.BASE_URL + url));
+const textures = imageUrls.map((url) => textureLoader.load(getAssetPath(url)));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
@@ -207,7 +209,7 @@ const TechStack = () => {
           ))}
         </Physics>
         <Environment
-          files={import.meta.env.BASE_URL + "models/char_enviorment.hdr"}
+          files={getAssetPath("models/char_enviorment.hdr")}
           environmentIntensity={0.5}
           environmentRotation={[0, 4, 2]}
         />
