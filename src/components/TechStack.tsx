@@ -13,32 +13,8 @@ import {
 
 import { getAssetPath } from "../utils/path";
 
-const textureLoader = new THREE.TextureLoader();
-const imageUrls = [
-  "images/react2.webp",
-  "images/next2.webp",
-  "images/node2.webp",
-  "images/express.webp",
-  "images/mongo.webp",
-  "images/mysql.webp",
-  "images/typescript.webp",
-  "images/javascript.webp",
-  "images/java.png",
-  "images/python.png",
-  "images/wordpress.png",
-  "images/woocommerce.png",
-  "images/html5.png",
-  "images/css3.png",
-  "images/git.png",
-  "images/tailwind.png",
-];
-const textures = imageUrls.map((url) => textureLoader.load(getAssetPath(url)));
-
+// Texture loading moved inside component to ensure getAssetPath is correct at runtime
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
-
-const spheres = [...Array(imageUrls.length)].map(() => ({
-  scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
-}));
 
 type SphereProps = {
   vec?: THREE.Vector3;
@@ -161,8 +137,31 @@ const TechStack = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const materials = useMemo(() => {
-    return textures.map(
+  const { materials, spheres } = useMemo(() => {
+    const textureLoader = new THREE.TextureLoader();
+    const urls = [
+      "images/react2.webp",
+      "images/next2.webp",
+      "images/node2.webp",
+      "images/express.webp",
+      "images/mongo.webp",
+      "images/mysql.webp",
+      "images/typescript.webp",
+      "images/javascript.webp",
+      "images/java.png",
+      "images/python.png",
+      "images/wordpress.png",
+      "images/woocommerce.png",
+      "images/html5.png",
+      "images/css3.png",
+      "images/git.png",
+      "images/tailwind.png",
+    ];
+    const loadedTextures = urls.map((url) =>
+      textureLoader.load(getAssetPath(url))
+    );
+
+    const generatedMaterials = loadedTextures.map(
       (texture) =>
         new THREE.MeshPhysicalMaterial({
           map: texture,
@@ -174,6 +173,12 @@ const TechStack = () => {
           clearcoat: 0.1,
         })
     );
+
+    const generatedSpheres = [...Array(urls.length)].map(() => ({
+      scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
+    }));
+
+    return { materials: generatedMaterials, spheres: generatedSpheres };
   }, []);
 
   return (
