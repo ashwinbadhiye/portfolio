@@ -227,6 +227,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .work-container {
+    padding: 0 20px;
+  }
   .work-filters {
     gap: 8px;
   }
@@ -236,5 +239,10 @@
   }
   .project-info {
     padding: 20px;
+    text-align: center;
+    align-items: center;
+  }
+  .project-tools {
+    justify-content: center;
   }
 }
