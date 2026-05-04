@@ -9,6 +9,30 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Web Asset Scraper",
+    description: "Advanced media extraction and asset scraping tool for modern web applications, featuring real-time preview and export capabilities.",
+    tools: ["React", "Node.js", "Express", "Puppeteer"],
+    image: "images/web_asset_scraper.png",
+    link: "https://web-asset-scraper.onrender.com/",
+    tags: ["websites", "tools", "web apps"]
+  },
+  {
+    title: "Service Intelligence Layer",
+    description: "Arista Service Intelligence Layer - A sophisticated dashboard for service monitoring, intelligence, and predictive maintenance.",
+    tools: ["React", "AI Integration", "Data Visualization"],
+    image: "images/aristasil.png",
+    link: "https://aristasil.netlify.app/",
+    tags: ["websites", "ai", "web apps", "ai and automation"]
+  },
+  {
+    title: "Zoo Intelligence",
+    description: "GOREWADA ZOO - Sangai Conservation Hub overview dashboard for animal health monitoring and habitat management.",
+    tools: ["React", "Interactive Maps", "Dashboard"],
+    image: "images/aristagorewada.png",
+    link: "https://aristagorewada.netlify.app/",
+    tags: ["websites", "conservation", "web apps", "ai and automation"]
+  },
+  {
     title: "Holy Mother Of The Rosary Cathedral",
     description: "A professional community-focused website for the Polish National Catholic Cathedral in Lancaster, NY, featuring integrated schedules and donor portals.",
     tools: ["WordPress", "Elementor", "jQuery", "PHP"],
