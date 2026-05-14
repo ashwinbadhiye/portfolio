@@ -12,7 +12,7 @@ export const projects: Project[] = [
     title: "ExcelDash",
     description: "Intelligent Spreadsheet Dashboards - Advanced data visualization and analytics.",
     tools: ["React", "Analytics", "Dashboard"],
-    image: "images/placeholder.webp",
+    image: "images/exceldash.png",
     link: "https://exceldash.netlify.app/",
     tags: ["websites", "web apps", "ai and automation"]
   },
