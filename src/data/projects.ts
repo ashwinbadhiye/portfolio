@@ -9,6 +9,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "ExcelDash",
+    description: "Intelligent Spreadsheet Dashboards - Advanced data visualization and analytics.",
+    tools: ["React", "Analytics", "Dashboard"],
+    image: "images/placeholder.webp",
+    link: "https://exceldash.netlify.app/",
+    tags: ["websites", "web apps", "ai and automation"]
+  },
+  {
     title: "Web Asset Scraper",
     description: "Advanced media extraction and asset scraping tool for modern web applications, featuring real-time preview and export capabilities.",
     tools: ["React", "Node.js", "Express", "Puppeteer"],
@@ -45,7 +53,7 @@ export const projects: Project[] = [
     description: "Premium custom awning and canopy solutions for residential and commercial spaces, designed for New England weather durability.",
     tools: ["WordPress", "Elementor", "Responsive Design"],
     image: "images/atlantic_awning.png",
-    link: "https://staging2.atlantic-awning.com/",
+    link: "https://atlantic-awning.com/",
     tags: ["websites"]
   },
   {
