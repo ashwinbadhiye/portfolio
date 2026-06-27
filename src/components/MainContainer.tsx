@@ -4,11 +4,11 @@ import Career from "./Career";
 import Contact from "./Contact";
 import Cursor from "./Cursor";
 import Landing from "./Landing";
+import ManifestAI from "./ManifestAI";
 import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
-import ManifestAI from "./ManifestAI";
 import setSplitText from "./utils/splitText";
 
 const TechStack = lazy(() => import("./TechStack"));
@@ -42,9 +42,9 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <Landing>{!isDesktopView && children}</Landing>
             <About />
             <WhatIDo />
+            <ManifestAI />
             <Career />
             <Work />
-            <ManifestAI />
             <Suspense fallback={<div>Loading....</div>}>
               <TechStack />
             </Suspense>

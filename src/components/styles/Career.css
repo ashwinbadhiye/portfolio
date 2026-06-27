@@ -17,7 +17,7 @@
   line-height: 70px;
   font-weight: 400;
   text-align: center;
-  background: linear-gradient(0deg, #0d9488, #ffffff);
+  background: linear-gradient(0deg, var(--accentColor), var(--textColor));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -92,7 +92,7 @@
   width: 3px;
   height: calc(100% + 50px);
   background-image: linear-gradient(to top,
-      #14b8a6 20%,
+      var(--accentColor) 20%,
       var(--accentColor) 50%,
       transparent 95%);
   max-height: 0%;
@@ -103,7 +103,7 @@
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 50%);
-  background-color: #14b8a6;
+  background-color: var(--accentColor);
   width: 10px;
   height: 10px;
   border-radius: 50px;

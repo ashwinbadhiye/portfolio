@@ -40,8 +40,8 @@
 
 .filter-btn {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #adacac;
+  border: 1px solid rgba(var(--inkRGB), 0.12);
+  color: var(--textMuted);
   padding: 10px 25px;
   border-radius: 50px;
   font-size: 14px;
@@ -53,7 +53,7 @@
 
 .filter-btn:hover {
   border-color: var(--accentColor);
-  color: #fff;
+  color: var(--textColor);
 }
 
 .filter-btn.active {
@@ -75,8 +75,8 @@
 }
 
 .project-box {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(var(--inkRGB), 0.035);
+  border: 1px solid rgba(var(--inkRGB), 0.08);
   border-radius: 20px;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -95,7 +95,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #1a1a1a;
+  background: rgba(var(--inkRGB), 0.06);
 }
 
 .project-image-container img {
@@ -115,7 +115,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(13, 13, 13, 0.6);
+  background: rgba(var(--inkRGB), 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,12 +157,12 @@
   font-size: 22px;
   font-weight: 600;
   margin: 0 0 15px;
-  color: #fff;
+  color: var(--textColor);
 }
 
 .project-info p {
   font-size: 14px;
-  color: #adacac;
+  color: var(--textMuted);
   line-height: 1.6;
   margin: 0 0 25px;
   font-weight: 300;
@@ -179,10 +179,10 @@
   font-size: 11px;
   font-weight: 400;
   padding: 3px 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(var(--inkRGB), 0.1);
+  border: 1px solid rgba(var(--inkRGB), 0.2);
   border-radius: 30px;
-  color: #fff;
+  color: var(--textColor);
   transition: 0.3s;
 }
 
@@ -196,7 +196,7 @@
   grid-column: 1 / -1;
   text-align: center;
   font-size: 18px;
-  color: #adacac;
+  color: var(--textMuted);
   padding: 50px;
 }
 
