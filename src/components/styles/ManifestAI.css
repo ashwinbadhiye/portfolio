@@ -61,23 +61,53 @@
   line-height: 1.7;
 }
 
-.manifest-status-row {
+.manifest-store-badges {
   display: flex;
-  gap: 14px;
+  align-items: center;
+  gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
-.manifest-pill {
-  border: 1px solid rgba(94, 234, 212, 0.35);
-  background: rgba(94, 234, 212, 0.08);
-  color: var(--accentColor);
-  font-size: 13px;
-  font-weight: 500;
+.manifest-store-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.manifest-store-badge:hover {
+  transform: scale(1.04);
+}
+
+.manifest-store-badge--disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.manifest-badge-img {
+  display: block;
+}
+
+.manifest-badge-apple {
+  height: 44px;
+  width: auto;
+}
+
+.manifest-badge-google {
+  height: 56px;
+  width: auto;
+}
+
+.manifest-badge-label {
+  font-size: 11px;
+  color: #888;
   letter-spacing: 0.5px;
-  padding: 8px 20px;
-  border-radius: 50px;
+  text-transform: uppercase;
 }
 
 .manifest-credit {
@@ -162,6 +192,68 @@
   line-height: 1.6;
   font-weight: 300;
   margin: 0;
+}
+
+/* ── Built With strip ── */
+.manifest-built-with-strip {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 48px 0;
+  text-align: center;
+}
+
+.manifest-built-with-title {
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #555;
+  margin: 0 0 30px;
+}
+
+.manifest-tech-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.manifest-tech-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0.65;
+  transition: opacity 0.25s ease;
+}
+
+.manifest-tech-item:hover {
+  opacity: 1;
+}
+
+.manifest-tech-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0.9);
+}
+
+.manifest-tech-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.manifest-tech-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ddd;
+  line-height: 1;
+}
+
+.manifest-tech-desc {
+  font-size: 11px;
+  color: #666;
+  line-height: 1;
 }
 
 /* ── Philosophy strip ── */
@@ -295,6 +387,12 @@
   }
   .manifest-features {
     padding: 60px 0;
+  }
+  .manifest-built-with-strip {
+    padding: 36px 0;
+  }
+  .manifest-tech-row {
+    gap: 24px;
   }
   .manifest-philosophy {
     padding: 40px 20px;

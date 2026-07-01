@@ -40,6 +40,29 @@ const philosophy = [
   "Built for daily ritual",
 ];
 
+const builtWith = [
+  {
+    name: "Firebase",
+    icon: "https://cdn.simpleicons.org/firebase/FFCA28",
+    desc: "Auth & real-time data",
+  },
+  {
+    name: "RevenueCat",
+    icon: "https://cdn.simpleicons.org/revenuecat/F26522",
+    desc: "Subscriptions & IAP",
+  },
+  {
+    name: "AdMob",
+    icon: "https://cdn.simpleicons.org/googleadmob/EA4335",
+    desc: "Monetization",
+  },
+  {
+    name: "Google Cloud",
+    icon: "https://cdn.simpleicons.org/googlecloud/4285F4",
+    desc: "AI & backend APIs",
+  },
+];
+
 const ManifestAI = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -94,10 +117,30 @@ const ManifestAI = () => {
           student preparing for exams, or someone building a healthier daily routine, it helps you gain
           clarity, stay motivated, and take consistent action toward the life you want.
         </p>
-        <div className="manifest-status-row">
-          <span className="manifest-pill">App Store · In Review</span>
-          <span className="manifest-pill">Google Play · Closed Testing</span>
+
+        <div className="manifest-store-badges">
+          <a
+            href="https://apps.apple.com/us/app/manifest-ai-vision-into-life/id6775246699"
+            target="_blank"
+            rel="noreferrer"
+            className="manifest-store-badge"
+          >
+            <img
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="Download on the App Store"
+              className="manifest-badge-img manifest-badge-apple"
+            />
+          </a>
+          <div className="manifest-store-badge manifest-store-badge--disabled">
+            <img
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+              alt="Get it on Google Play"
+              className="manifest-badge-img manifest-badge-google"
+            />
+            <span className="manifest-badge-label">Closed Testing</span>
+          </div>
         </div>
+
         <p className="manifest-credit">
           I led product design and direction from the ground up, and partnered with a developer to bring it
           to the App Store and Google Play.
@@ -126,6 +169,23 @@ const ManifestAI = () => {
         </div>
       </div>
 
+      <div className="manifest-built-with-strip">
+        <div className="section-container">
+          <p className="manifest-built-with-title">Powered by</p>
+          <div className="manifest-tech-row">
+            {builtWith.map((tech, i) => (
+              <div className="manifest-tech-item" key={i}>
+                <img src={tech.icon} alt={tech.name} className="manifest-tech-icon" />
+                <div className="manifest-tech-info">
+                  <span className="manifest-tech-name">{tech.name}</span>
+                  <span className="manifest-tech-desc">{tech.desc}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="manifest-philosophy">
         <div className="section-container">
           <p className="manifest-philosophy-title">Designed for real life</p>
@@ -146,7 +206,7 @@ const ManifestAI = () => {
                 Visit App Website
               </a>
               <a href="#contact" className="manifest-btn manifest-btn-secondary">
-                Request a Test Build
+                Request Android Build
               </a>
             </div>
             <a
