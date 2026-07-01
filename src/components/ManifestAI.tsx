@@ -128,14 +128,15 @@ const ManifestAI = () => {
             <img
               src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
               alt="Download on the App Store"
-              className="manifest-badge-img manifest-badge-apple"
+              className="manifest-badge-img"
             />
+            <span className="manifest-badge-label manifest-badge-label--live">Released</span>
           </a>
           <div className="manifest-store-badge manifest-store-badge--disabled">
             <img
               src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
               alt="Get it on Google Play"
-              className="manifest-badge-img manifest-badge-google"
+              className="manifest-badge-img"
             />
             <span className="manifest-badge-label">Closed Testing</span>
           </div>
