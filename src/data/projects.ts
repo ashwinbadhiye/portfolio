@@ -9,6 +9,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Vouching — SV-CIE",
+    description: "Arista AI's audit workspace platform for CA firms. Streamlines client onboarding, vouching workflows, and statutory audit trails with real-time collaboration.",
+    tools: ["React", "Node.js", "AI Integration", "Audit Tech"],
+    image: "images/vouching.png",
+    link: "https://vouching-frontend.onrender.com/",
+    tags: ["web apps", "ai and automation"]
+  },
+  {
     title: "ExcelDash",
     description: "Intelligent Spreadsheet Dashboards - Advanced data visualization and analytics.",
     tools: ["React", "Analytics", "Dashboard"],
