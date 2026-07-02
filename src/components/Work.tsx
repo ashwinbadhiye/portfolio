@@ -35,6 +35,9 @@ const Work = () => {
         <div className="projects-grid">
           {filteredProjects.map((project, index) => (
             <div className="project-box" key={index}>
+              <span className={`project-source-badge ${project.source === "Freelancing" ? "badge-freelance" : "badge-oriens"}`}>
+                {project.source}
+              </span>
               <div className="project-image-container">
                 <img src={project.image} alt={project.title} />
                 <div className="project-overlay">

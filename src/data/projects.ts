@@ -5,6 +5,7 @@ export interface Project {
   image: string;
   link: string;
   tags: string[];
+  source: string;
 }
 
 export const projects: Project[] = [
@@ -14,7 +15,8 @@ export const projects: Project[] = [
     tools: ["React", "Node.js", "AI Integration", "Audit Tech"],
     image: "images/vouching.png",
     link: "https://vouching-frontend.onrender.com/",
-    tags: ["web apps", "ai and automation"]
+    tags: ["web apps", "ai and automation"],
+    source: "Freelancing"
   },
   {
     title: "ExcelDash",
@@ -22,7 +24,8 @@ export const projects: Project[] = [
     tools: ["React", "Analytics", "Dashboard"],
     image: "images/exceldash.png",
     link: "https://exceldash.netlify.app/",
-    tags: ["websites", "web apps", "ai and automation"]
+    tags: ["websites", "web apps", "ai and automation"],
+    source: "Freelancing"
   },
   {
     title: "Web Asset Scraper",
@@ -30,7 +33,8 @@ export const projects: Project[] = [
     tools: ["React", "Node.js", "Express", "Puppeteer"],
     image: "images/web_asset_scraper.png",
     link: "https://web-asset-scraper.onrender.com/",
-    tags: ["websites", "tools", "web apps"]
+    tags: ["websites", "tools", "web apps"],
+    source: "Freelancing"
   },
   {
     title: "Service Intelligence Layer",
@@ -38,7 +42,8 @@ export const projects: Project[] = [
     tools: ["React", "AI Integration", "Data Visualization"],
     image: "images/aristasil.png",
     link: "https://aristasil.netlify.app/",
-    tags: ["websites", "ai", "web apps", "ai and automation"]
+    tags: ["websites", "ai", "web apps", "ai and automation"],
+    source: "Freelancing"
   },
   {
     title: "Zoo Intelligence",
@@ -46,15 +51,8 @@ export const projects: Project[] = [
     tools: ["React", "Interactive Maps", "Dashboard"],
     image: "images/aristagorewada.png",
     link: "https://aristagorewada.netlify.app/",
-    tags: ["websites", "conservation", "web apps", "ai and automation"]
-  },
-  {
-    title: "Holy Mother Of The Rosary Cathedral",
-    description: "A professional community-focused website for the Polish National Catholic Cathedral in Lancaster, NY, featuring integrated schedules and donor portals.",
-    tools: ["WordPress", "Elementor", "jQuery", "PHP"],
-    image: "images/hmr_cathedral.png",
-    link: "https://www.holymotheroftherosary.org/",
-    tags: ["websites"]
+    tags: ["websites", "conservation", "web apps", "ai and automation"],
+    source: "Freelancing"
   },
   {
     title: "Atlantic Awning",
@@ -62,7 +60,17 @@ export const projects: Project[] = [
     tools: ["WordPress", "Elementor", "Responsive Design"],
     image: "images/atlantic_awning.png",
     link: "https://atlantic-awning.com/",
-    tags: ["websites"]
+    tags: ["websites"],
+    source: "Freelancing"
+  },
+  {
+    title: "Holy Mother Of The Rosary Cathedral",
+    description: "A professional community-focused website for the Polish National Catholic Cathedral in Lancaster, NY, featuring integrated schedules and donor portals.",
+    tools: ["WordPress", "Elementor", "jQuery", "PHP"],
+    image: "images/hmr_cathedral.png",
+    link: "https://www.holymotheroftherosary.org/",
+    tags: ["websites"],
+    source: "At Oriens"
   },
   {
     title: "Arista AI",
@@ -70,7 +78,8 @@ export const projects: Project[] = [
     tools: ["WordPress", "Elementor", "AI Integration"],
     image: "images/arista_ai.png",
     link: "https://arista-ai.net/",
-    tags: ["websites"]
+    tags: ["websites"],
+    source: "At Oriens"
   },
   {
     title: "POS Anywhere",
@@ -78,7 +87,8 @@ export const projects: Project[] = [
     tools: ["Next.js", "Tailwind CSS", "Ecommerce"],
     image: "images/pos_anywhere.png",
     link: "https://www.posanywhere.com/",
-    tags: ["websites"]
+    tags: ["websites"],
+    source: "At Oriens"
   },
   {
     title: "United Fire Safety",
@@ -86,7 +96,8 @@ export const projects: Project[] = [
     tools: ["WordPress", "Elementor", "Industrial Design"],
     image: "images/united_fire.png",
     link: "https://unitedfire.computersosinc.com/",
-    tags: ["websites"]
+    tags: ["websites"],
+    source: "At Oriens"
   },
   {
     title: "Preferred Materials",
@@ -94,7 +105,8 @@ export const projects: Project[] = [
     tools: ["WordPress", "Builders Supplies", "Local SEO"],
     image: "images/preferred_materials.png",
     link: "https://www.preferredmaterialsllc1.com/",
-    tags: ["websites"]
+    tags: ["websites"],
+    source: "At Oriens"
   },
   {
     title: "Computer SOS Inc",
@@ -102,7 +114,8 @@ export const projects: Project[] = [
     tools: ["Bootstrap", "Software Dev", "IT Services"],
     image: "images/computer_sos.png",
     link: "https://www.computersosinc.com/",
-    tags: ["websites"]
+    tags: ["websites"],
+    source: "At Oriens"
   },
   {
     title: "Ashwin Badhiye Portfolio",
@@ -110,7 +123,8 @@ export const projects: Project[] = [
     tools: ["HTML5", "CSS3", "Netlify"],
     image: "images/ashwin_badhiye_old.png",
     link: "https://ashwinbadhiye.netlify.app/",
-    tags: ["websites"]
+    tags: ["websites"],
+    source: "At Oriens"
   },
   {
     title: "POSAXChange",
@@ -118,7 +132,8 @@ export const projects: Project[] = [
     tools: ["Next.js", "Tailwind CSS", "Marketplace API"],
     image: "images/posaxchange.png",
     link: "https://www.posaxchange.com/",
-    tags: ["websites"]
+    tags: ["websites"],
+    source: "At Oriens"
   },
   {
     title: "POSA Doctor",
@@ -126,7 +141,8 @@ export const projects: Project[] = [
     tools: ["WordPress", "Elementor", "System Monitoring"],
     image: "images/posadoctor.png",
     link: "https://www.posadoctor.com/",
-    tags: ["websites"]
+    tags: ["websites"],
+    source: "At Oriens"
   },
   {
     title: "MYL Sports",
@@ -134,6 +150,7 @@ export const projects: Project[] = [
     tools: ["Bootstrap", "Sports Management", "SaaS"],
     image: "images/mylsports.png",
     link: "https://www.mylsports.com/",
-    tags: ["websites"]
+    tags: ["websites"],
+    source: "At Oriens"
   }
 ];

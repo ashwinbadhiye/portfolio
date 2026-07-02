@@ -75,19 +75,47 @@
 }
 
 .project-box {
-  background: rgba(var(--inkRGB), 0.035);
-  border: 1px solid rgba(var(--inkRGB), 0.08);
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 20px;
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: visible;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .project-box:hover {
   transform: translateY(-10px);
-  border-color: var(--accentColor);
+  border-color: rgba(94, 234, 212, 0.5);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Source Badge ── */
+.project-source-badge {
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.badge-freelance {
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  color: #fbbf24;
+}
+
+.badge-oriens {
+  background: rgba(94, 234, 212, 0.08);
+  border: 1px solid rgba(94, 234, 212, 0.2);
+  color: var(--accentColor);
 }
 
 .project-image-container {
@@ -95,7 +123,8 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: rgba(var(--inkRGB), 0.06);
+  border-radius: 20px 20px 0 0;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .project-image-container img {
