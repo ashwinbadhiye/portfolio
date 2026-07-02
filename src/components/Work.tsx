@@ -1,9 +1,19 @@
 import { useState } from "react";
 import "./styles/Work.css";
-import { projects } from "../data/projects";
+import { projects, Project } from "../data/projects";
+import ProjectModal from "./ProjectModal";
+
+const ExternalLinkIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+);
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   const categories = ["all", "websites", "web apps", "ai and automation"];
 
@@ -34,20 +44,36 @@ const Work = () => {
 
         <div className="projects-grid">
           {filteredProjects.map((project, index) => (
-            <div className="project-box" key={index}>
-              <span className={`project-source-badge ${project.source === "Freelancing" ? "badge-freelance" : "badge-oriens"}`}>
-                {project.source}
-              </span>
+            <div
+              className="project-box"
+              key={index}
+              onClick={() => setActiveProject(project)}
+              data-cursor="disable"
+            >
               <div className="project-image-container">
                 <img src={project.image} alt={project.title} />
                 <div className="project-overlay">
-                  <a href={project.link} target="_blank" rel="noreferrer" className="visit-btn">
-                    Visit Site
-                  </a>
+                  <span className="view-details-hint">View Details</span>
                 </div>
               </div>
               <div className="project-info">
-                <h4>{project.title}</h4>
+                <div className="project-title-row">
+                  <h4>{project.title}</h4>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-visit-icon"
+                    onClick={(e) => e.stopPropagation()}
+                    aria-label={`Visit ${project.title}`}
+                    data-cursor="disable"
+                  >
+                    <ExternalLinkIcon />
+                  </a>
+                </div>
+                <span className={`project-source-badge ${project.source === "Freelance" ? "badge-freelance" : "badge-oriens"}`}>
+                  {project.source}
+                </span>
                 <p>{project.description}</p>
                 <div className="project-tools">
                    {project.tools.map((tool, i) => (
@@ -62,6 +88,10 @@ const Work = () => {
           )}
         </div>
       </div>
+
+      {activeProject && (
+        <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
+      )}
     </div>
   );
 };

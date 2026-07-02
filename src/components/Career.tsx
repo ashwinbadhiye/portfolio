@@ -2,11 +2,11 @@ import "./styles/Career.css";
 
 const Career = () => {
   return (
-    <div className="career-section section-container">
+    <div className="career-section section-container" id="experience">
       <div className="career-container">
         <h2>
-          My career <span>&</span>
-          <br /> experience
+          My Career <span>&</span>
+          <br /> Experience
         </h2>
         <div className="career-info">
           <div className="career-timeline">
@@ -16,13 +16,39 @@ const Career = () => {
             <div className="career-info-in">
               <div className="career-role">
                 <h4>Freelancing</h4>
-                {/* <h5>CallHQ.ai</h5> */}
+                <h5>AI & Full-Stack Developer</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Working on AI-powered automation apps and web applications that
-              simplify workflows and boost efficiency.
+              Designing and shipping AI-powered SaaS products and automation
+              tools end to end — from product direction to deployment.
+              <li>
+                Manifest AI — my flagship: an iOS &amp; Android app that turns
+                goals and private journals into personalized AI manifestation
+                scripts, affirmations, and calming audio sessions.
+              </li>
+              <li>
+                Zoo Intelligence — multilingual animal-health monitoring with AI
+                timelines, upcoming-care alerts, a chatbot, and a RAG-based
+                symptom analyzer.
+              </li>
+              <li>
+                Service Intelligence Layer — an enterprise service &amp;
+                predictive-maintenance platform with role-based dashboards.
+              </li>
+              <li>
+                CA AI — an AI vouching &amp; GST-compliance engine for chartered
+                accountants: invoice extraction, GSTR-1/3B/2B reconciliation,
+                tax-notice response drafting, and audit documentation.
+              </li>
+              <li>
+                ExcelDash — turns raw spreadsheets into interactive KPI
+                dashboards with an AI insights mode and a data chatbot.
+              </li>
+              Plus supporting web apps and tools such as a web asset scraper —
+              built with React Native, Next.js, React, TypeScript,
+              Python/FastAPI, and OpenAI.
             </p>
           </div>
           <div className="career-info-box">

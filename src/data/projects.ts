@@ -1,3 +1,15 @@
+export interface TechItem {
+  name: string;
+  icon?: string; // icon URL (e.g. https://cdn.simpleicons.org/react/61DAFB)
+}
+
+export interface ProjectDetails {
+  longDescription: string;
+  screenshots: string[];
+  techStack: TechItem[];
+  highlights?: string[];
+}
+
 export interface Project {
   title: string;
   description: string;
@@ -6,53 +18,180 @@ export interface Project {
   link: string;
   tags: string[];
   source: string;
+  details?: ProjectDetails; // present only for featured projects → opens rich modal
 }
 
 export const projects: Project[] = [
   {
-    title: "Vouching — SV-CIE",
-    description: "Arista AI's audit workspace platform for CA firms. Streamlines client onboarding, vouching workflows, and statutory audit trails with real-time collaboration.",
-    tools: ["React", "Node.js", "AI Integration", "Audit Tech"],
-    image: "images/vouching.png",
-    link: "https://vouching-frontend.onrender.com/",
+    title: "Zoo Intelligence",
+    description: "AI animal-health monitoring for Gorewada Zoo. Keepers log daily care in any language; the app builds per-animal timelines, raises upcoming vaccination and deworming alerts, and answers health questions through an AI chatbot and symptom analyzer.",
+    tools: ["AI Integration", "RAG", "Next.js", "React"],
+    image: "projects/zoo-intelligence/zoo-1.png",
+    link: "https://aristagorewada.netlify.app/",
     tags: ["web apps", "ai and automation"],
-    source: "Freelancing"
-  },
-  {
-    title: "ExcelDash",
-    description: "Intelligent Spreadsheet Dashboards - Advanced data visualization and analytics.",
-    tools: ["React", "Analytics", "Dashboard"],
-    image: "images/exceldash.png",
-    link: "https://exceldash.netlify.app/",
-    tags: ["websites", "web apps", "ai and automation"],
-    source: "Freelancing"
-  },
-  {
-    title: "Web Asset Scraper",
-    description: "Advanced media extraction and asset scraping tool for modern web applications, featuring real-time preview and export capabilities.",
-    tools: ["React", "Node.js", "Express", "Puppeteer"],
-    image: "images/web_asset_scraper.png",
-    link: "https://web-asset-scraper.onrender.com/",
-    tags: ["websites", "tools", "web apps"],
-    source: "Freelancing"
+    source: "Freelance",
+    details: {
+      longDescription:
+        "Zoo Intelligence is an AI-driven animal health monitoring system built for Gorewada Zoo's Sangai deer conservation program. A zookeeper simply types daily observations — food, cleaning, vaccinations, treatments — as free text in any language, and AI parses and translates each note into clean, structured records in the output language. Every entry feeds a per-animal timeline that becomes a complete life history for each deer. On top of that data sit four AI capabilities: automatic alerts for upcoming events like vaccinations and deworming; an AI chatbot that answers questions about any animal's past, present, and future (e.g. 'is Raja vaccinated?' or 'when is the next booster due?'); and a symptom analyzer where a keeper describes a symptom and the AI retrieves a likely diagnosis, recommended actions, and medications by combining the animal's own history with medical knowledge from the web. Retrieval is powered by on-device embeddings and a vector search layer, so answers stay grounded in the zoo's real records.",
+      screenshots: [
+        "projects/zoo-intelligence/zoo-1.png",
+        "projects/zoo-intelligence/zoo-2.png",
+        "projects/zoo-intelligence/zoo-3.png",
+        "projects/zoo-intelligence/zoo-4.png",
+      ],
+      techStack: [
+        { name: "OpenAI", icon: "images/openai.svg" },
+        { name: "AI Chatbot", icon: "images/chatbot.svg" },
+        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "Hugging Face", icon: "https://cdn.simpleicons.org/huggingface/FFD21E" },
+        { name: "Vector DB (RAG)", icon: "images/vector.svg" },
+      ],
+      highlights: [
+        "Multilingual logging — keepers record daily food, cleaning, and vaccination notes as free text in any language, auto-structured into the database",
+        "Animal timelines — a complete, chronological life history of every animal's care and health events",
+        "Smart alerts — automatic reminders for upcoming vaccinations, deworming, and health checks",
+        "AI chatbot — ask about any animal's past, present, or future, like 'is Raja vaccinated?' or 'when is the next booster?'",
+        "AI symptom analyzer — describe a symptom and get a likely diagnosis, immediate actions, and medications drawn from past records and the web",
+      ],
+    },
   },
   {
     title: "Service Intelligence Layer",
-    description: "Arista Service Intelligence Layer - A sophisticated dashboard for service monitoring, intelligence, and predictive maintenance.",
-    tools: ["React", "AI Integration", "Data Visualization"],
+    description: "Enterprise service-intelligence SaaS for industrial machine fleets. Unifies dealer performance, machine lifecycle, predictive maintenance, and spare-parts revenue across four role-based dashboards — admin, dealer, field engineer, and customer.",
+    tools: ["Next.js", "TypeScript", "Prisma", "Enterprise SaaS"],
     image: "images/aristasil.png",
     link: "https://aristasil.netlify.app/",
-    tags: ["websites", "ai", "web apps", "ai and automation"],
-    source: "Freelancing"
+    tags: ["web apps", "ai and automation"],
+    source: "Freelance",
+    details: {
+      longDescription:
+        "The Arista Service Intelligence Layer (SIL) is a production-grade enterprise SaaS platform that gives an industrial machine manufacturer end-to-end visibility over its entire service ecosystem. It ships four distinct, role-based experiences behind role-based access control: a national 'control tower' for the brand admin (network-wide machine, dealer, service, and inventory KPIs), an operations cockpit for dealer managers (customers, engineers, service scheduling, and stock), a mobile-optimised app for field engineers (digital multi-step job execution and safety checks), and a self-service portal for customers (machine status, service history, and breakdown requests). The platform tracks each machine as a 'digital passport' — full service history, parts replaced, remaining life, running hours, and next service — while an AI insights hub clusters recurring breakdowns, surfaces emerging failure patterns, and generates service summaries. Inventory and forecasting modules tie service data to spare-parts demand, stockout risk, and missed-service revenue leakage, turning field operations into measurable, auditable business intelligence.",
+      screenshots: [
+        "images/aristasil.png",
+        "projects/service-intelligence-layer/sil-1.png",
+      ],
+      techStack: [
+        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "shadcn/ui", icon: "https://cdn.simpleicons.org/shadcnui/ffffff" },
+        { name: "Prisma", icon: "https://cdn.simpleicons.org/prisma/ffffff" },
+        { name: "SQLite", icon: "https://cdn.simpleicons.org/sqlite/ffffff" },
+        { name: "NextAuth.js", icon: "images/auth.svg" },
+        { name: "Recharts", icon: "images/recharts.svg" },
+        { name: "Zod", icon: "https://cdn.simpleicons.org/zod/3E67B1" },
+      ],
+      highlights: [
+        "Four role-based experiences — admin control tower, dealer operations cockpit, field-engineer mobile app, and customer portal, all behind RBAC",
+        "Installed-base 'digital passport' — per-machine service history, parts used, remaining life, running hours, and next service due",
+        "Dealer performance leaderboard — service compliance, on-time rate, repeat issues, stockouts, and revenue per machine with traffic-light scoring",
+        "Predictive maintenance & AI insights — automated breakdown clustering, emerging-failure detection, and AI service summaries",
+        "Inventory & spare-parts revenue protection — demand forecasting, stockout-risk alerts, and missed-service revenue-leakage tracking",
+        "Digital field service — engineers run multi-step job execution with safety checks; customers raise and track breakdown requests",
+      ],
+    },
   },
   {
-    title: "Zoo Intelligence",
-    description: "GOREWADA ZOO - Sangai Conservation Hub overview dashboard for animal health monitoring and habitat management.",
-    tools: ["React", "Interactive Maps", "Dashboard"],
-    image: "images/aristagorewada.png",
-    link: "https://aristagorewada.netlify.app/",
-    tags: ["websites", "conservation", "web apps", "ai and automation"],
-    source: "Freelancing"
+    title: "CA AI",
+    description: "AI-powered vouching and compliance engine for CA firms — automated invoice extraction, GST reconciliation, tax-notice responses, and audit documentation with near-zero manual effort.",
+    tools: ["AI Integration", "Audit Tech", "React", "Node"],
+    image: "projects/vouching/caai-1.png",
+    link: "https://vouching-frontend.onrender.com/",
+    tags: ["web apps", "ai and automation"],
+    source: "Freelance",
+    details: {
+      longDescription:
+        "CA AI is a Smart Vouching & Compliance Intelligence Engine built for chartered accountancy audit workflows. It uses AI to extract data from thousands of invoices, reconcile GST returns, and flag compliance exceptions with near-zero manual effort — turning what was days of tedious ledger work into an automated, auditable pipeline. Beyond vouching, it bundles a suite of AI assistants that reconcile GST filings, draft responses to tax notices, and generate complete audit working papers, so CAs can focus on judgement instead of formatting.",
+      screenshots: [
+        "projects/vouching/caai-1.png",
+        "projects/vouching/caai-2.png",
+        "projects/vouching/caai-3.png",
+      ],
+      techStack: [
+        { name: "OpenAI", icon: "images/openai.svg" },
+        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi/009688" },
+        { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
+        { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
+        { name: "SQLAlchemy", icon: "https://cdn.simpleicons.org/sqlalchemy/D71F00" },
+      ],
+      highlights: [
+        "Smart Vouching Engine — AI invoice extraction, GST reconciliation & compliance flagging across thousands of invoices with near-zero manual effort",
+        "AI GST Reconciliation — automated GSTR-1 vs 3B vs 2B matching with ITC gap reports and a filing-readiness dashboard",
+        "AI Tax Notice Response Assistant — reads GST and income-tax notices, maps provisions, and drafts structured responses for CA review",
+        "AI Audit Documentation Assistant — auto-generates working papers, checklists, and summaries from client uploads with zero formatting effort",
+      ],
+    },
+  },
+  {
+    title: "ExcelDash",
+    description: "Turns boring spreadsheets into interactive KPI dashboards. Upload Excel or CSV for instant charts and metrics, switch to AI mode for deeper trends, and ask a built-in chatbot questions about your data.",
+    tools: ["AI Integration", "Dashboard", "Next.js", "React"],
+    image: "projects/exceldash/exceldash-1.png",
+    link: "https://exceldash.netlify.app/",
+    tags: ["web apps", "ai and automation"],
+    source: "Freelance",
+    details: {
+      longDescription:
+        "ExcelDash transforms plain, hard-to-read spreadsheets into clean, interactive KPI dashboards. Drop in an Excel or CSV file and it instantly detects your metrics and segments, then renders them as KPI cards, trend lines, bar charts, and distributions. It runs in two modes: Standard Mode converts your tabular data straight into dashboards and charts, while AI Mode goes further — surfacing deeper metrics, trends, and a strategic summary of what the numbers actually mean. A built-in AI Data Assistant lets you ask questions about your dataset in plain English and get grounded answers, and a one-click Data Dossier packages everything into a shareable business report.",
+      screenshots: [
+        "projects/exceldash/exceldash-1.png",
+        "projects/exceldash/exceldash-2.png",
+        "projects/exceldash/exceldash-3.png",
+        "projects/exceldash/exceldash-4.png",
+      ],
+      techStack: [
+        { name: "OpenAI", icon: "images/openai.svg" },
+        { name: "AI Chatbot", icon: "images/chatbot.svg" },
+        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "Recharts", icon: "images/recharts.svg" },
+        { name: "Framer Motion", icon: "https://cdn.simpleicons.org/framer/ffffff" },
+      ],
+      highlights: [
+        "Standard Mode — instantly converts raw Excel/CSV tables into clean KPI cards, charts, and dashboards",
+        "AI Mode — surfaces deeper metrics, trends, and an auto-generated strategic summary of your data",
+        "AI Data Assistant — ask questions in plain English and get answers grounded in your uploaded dataset",
+        "Data Dossier — one-click, shareable business report with a strategic overview and primary findings",
+      ],
+    },
+  },
+  {
+    title: "Web Asset Scraper",
+    description: "Paste any URL and instantly extract all its images, PDFs, and documents. Preview, sort, and filter the results, then export everything as a ZIP, CSV, or Excel file.",
+    tools: ["React", "Node.js", "Express", "Puppeteer"],
+    image: "images/web_asset_scraper.png",
+    link: "https://web-asset-scraper.onrender.com/",
+    tags: ["web apps"],
+    source: "Freelance",
+    details: {
+      longDescription:
+        "Web Asset Scraper pulls every downloadable asset out of any public web page. Paste a URL and it crawls the page — handling modern, JavaScript-heavy sites via a stealth Puppeteer engine — then returns all of its images, PDFs, and documents in a live preview grid. You can sort and filter the results by type, size, or name, select exactly what you need, and export in whatever format suits your workflow: a bundled ZIP of the raw files, or a CSV/Excel manifest of every asset and its metadata. It's built as a fast, no-friction tool for designers, researchers, and developers who need to grab a site's media in seconds instead of saving files one by one.",
+      screenshots: ["images/web_asset_scraper.png"],
+      techStack: [
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
+        { name: "Express", icon: "https://cdn.simpleicons.org/express/ffffff" },
+        { name: "Puppeteer", icon: "https://cdn.simpleicons.org/puppeteer/40B5A4" },
+        { name: "Axios", icon: "https://cdn.simpleicons.org/axios/5A29E4" },
+        { name: "Radix UI", icon: "https://cdn.simpleicons.org/radixui/ffffff" },
+      ],
+      highlights: [
+        "Extracts every image, PDF, and document from any public URL in one click",
+        "Live preview grid with sorting and filtering by type, size, and name",
+        "Bulk export as ZIP, CSV, or Excel — grab all assets or just the ones you select",
+        "Stealth Puppeteer crawling reliably handles modern, JavaScript-heavy sites",
+      ],
+    },
   },
   {
     title: "Atlantic Awning",
@@ -61,16 +200,23 @@ export const projects: Project[] = [
     image: "images/atlantic_awning.png",
     link: "https://atlantic-awning.com/",
     tags: ["websites"],
-    source: "Freelancing"
-  },
-  {
-    title: "Holy Mother Of The Rosary Cathedral",
-    description: "A professional community-focused website for the Polish National Catholic Cathedral in Lancaster, NY, featuring integrated schedules and donor portals.",
-    tools: ["WordPress", "Elementor", "jQuery", "PHP"],
-    image: "images/hmr_cathedral.png",
-    link: "https://www.holymotheroftherosary.org/",
-    tags: ["websites"],
-    source: "At Oriens"
+    source: "Freelance",
+    details: {
+      longDescription:
+        "A polished marketing and lead-generation website for Atlantic Awning, a New England manufacturer of custom awnings and canopies. Built on WordPress with Elementor, it showcases residential and commercial product lines through rich galleries, service-area pages, and clear calls to action — all wrapped in a fully responsive layout engineered to hold up on any device.",
+      screenshots: ["images/atlantic_awning.png"],
+      techStack: [
+        { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/ffffff" },
+        { name: "Elementor", icon: "https://cdn.simpleicons.org/elementor/ffffff" },
+        { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+      ],
+      highlights: [
+        "Custom Elementor page designs for residential and commercial awning product lines",
+        "Fully responsive, mobile-first layout with fast-loading galleries",
+        "Lead-focused structure with clear service-area pages and calls to action",
+      ],
+    },
   },
   {
     title: "Arista AI",
@@ -79,7 +225,50 @@ export const projects: Project[] = [
     image: "images/arista_ai.png",
     link: "https://arista-ai.net/",
     tags: ["websites"],
-    source: "At Oriens"
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "The corporate website for Arista AI, a strategic AI consultancy. It presents the firm's positioning — guiding businesses from AI strategy through to full production deployment — with structured service breakdowns, case-study framing, and conversion-focused contact flows, built on WordPress and Elementor for fast content iteration.",
+      screenshots: ["images/arista_ai.png"],
+      techStack: [
+        { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/ffffff" },
+        { name: "Elementor", icon: "https://cdn.simpleicons.org/elementor/ffffff" },
+        { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+      ],
+      highlights: [
+        "Clear service architecture from AI strategy to production integration",
+        "Conversion-focused layout with strong calls to action",
+        "Editable WordPress/Elementor stack for rapid content updates",
+      ],
+    },
+  },
+  {
+    title: "Holy Mother Of The Rosary Cathedral",
+    description: "A professional community-focused website for the Polish National Catholic Cathedral in Lancaster, NY, featuring integrated schedules and donor portals.",
+    tools: ["WordPress", "Elementor", "jQuery", "PHP"],
+    image: "images/hmr_cathedral.png",
+    link: "https://www.holymotheroftherosary.org/",
+    tags: ["websites"],
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "A community-focused website for the Holy Mother of the Rosary Cathedral, a Polish National Catholic parish in Lancaster, NY. It brings the congregation's schedules, events, sacraments, and donation options online, with an accessible, welcoming design built on WordPress and Elementor and enhanced with jQuery-driven interactions. Online giving is powered by a secure Global Payments Integrated gateway, letting parishioners donate directly through the site.",
+      screenshots: ["images/hmr_cathedral.png"],
+      techStack: [
+        { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/ffffff" },
+        { name: "Elementor", icon: "https://cdn.simpleicons.org/elementor/ffffff" },
+        { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
+        { name: "jQuery", icon: "https://cdn.simpleicons.org/jquery/0769AD" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+        { name: "Global Payments", icon: "images/payments.svg" },
+      ],
+      highlights: [
+        "Secure online donations powered by a Global Payments Integrated gateway",
+        "Integrated mass and event schedules for the congregation",
+        "Accessible, welcoming design for a broad community audience",
+      ],
+    },
   },
   {
     title: "POS Anywhere",
@@ -88,7 +277,23 @@ export const projects: Project[] = [
     image: "images/pos_anywhere.png",
     link: "https://www.posanywhere.com/",
     tags: ["websites"],
-    source: "At Oriens"
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "A modern marketing site for POS Anywhere, a unified retail platform spanning ecommerce, mobile point-of-sale, and marketplace integrations. Built with Next.js and Tailwind CSS, it delivers a fast, app-like browsing experience that communicates the product's cross-channel retail capabilities.",
+      screenshots: ["images/pos_anywhere.png"],
+      techStack: [
+        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+      ],
+      highlights: [
+        "Fast, app-like experience powered by Next.js",
+        "Explains unified ecommerce, mobile POS, and marketplace integrations",
+        "Responsive, conversion-oriented product marketing",
+      ],
+    },
   },
   {
     title: "United Fire Safety",
@@ -97,7 +302,23 @@ export const projects: Project[] = [
     image: "images/united_fire.png",
     link: "https://unitedfire.computersosinc.com/",
     tags: ["websites"],
-    source: "At Oriens"
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "A product and capabilities website for United Fire Safety, a global supplier of precision-molded industrial fire-safety equipment and hose fittings. The site organises a technical product catalogue for industrial buyers with an emphasis on specification clarity, built on WordPress and Elementor.",
+      screenshots: ["images/united_fire.png"],
+      techStack: [
+        { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/ffffff" },
+        { name: "Elementor", icon: "https://cdn.simpleicons.org/elementor/ffffff" },
+        { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+      ],
+      highlights: [
+        "Structured technical catalogue for industrial fire-safety products",
+        "Specification-focused product pages for B2B buyers",
+        "Responsive WordPress/Elementor build",
+      ],
+    },
   },
   {
     title: "Preferred Materials",
@@ -106,7 +327,23 @@ export const projects: Project[] = [
     image: "images/preferred_materials.png",
     link: "https://www.preferredmaterialsllc1.com/",
     tags: ["websites"],
-    source: "At Oriens"
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "A local-business website for Preferred Materials, a supplier of ready-mix concrete and builders' supplies. It pairs a clear product and services overview with local-SEO-optimised content to help contractors and builders find and contact the company, built on WordPress.",
+      screenshots: ["images/preferred_materials.png"],
+      techStack: [
+        { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/ffffff" },
+        { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+        { name: "CSS", icon: "https://cdn.simpleicons.org/css/663399" },
+      ],
+      highlights: [
+        "Local-SEO-optimised pages to capture regional construction demand",
+        "Clear product and builders-supply service overview",
+        "Easy-to-maintain WordPress content structure",
+      ],
+    },
   },
   {
     title: "Computer SOS Inc",
@@ -115,7 +352,24 @@ export const projects: Project[] = [
     image: "images/computer_sos.png",
     link: "https://www.computersosinc.com/",
     tags: ["websites"],
-    source: "At Oriens"
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "The corporate website for Computer SOS Inc, a regional technology hub offering retail IT services, custom software development, and ecommerce strategy. Built on Bootstrap, it presents the company's service lines in a clean, responsive layout aimed at retail and small-business clients.",
+      screenshots: ["images/computer_sos.png"],
+      techStack: [
+        { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap/7952B3" },
+        { name: "HTML5", icon: "https://cdn.simpleicons.org/html5/E34F26" },
+        { name: "CSS", icon: "https://cdn.simpleicons.org/css/663399" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+        { name: "jQuery", icon: "https://cdn.simpleicons.org/jquery/0769AD" },
+      ],
+      highlights: [
+        "Presents IT services, custom software, and ecommerce offerings",
+        "Clean, responsive Bootstrap layout",
+        "Targeted at retail and small-business clients",
+      ],
+    },
   },
   {
     title: "Ashwin Badhiye Portfolio",
@@ -124,7 +378,23 @@ export const projects: Project[] = [
     image: "images/ashwin_badhiye_old.png",
     link: "https://ashwinbadhiye.netlify.app/",
     tags: ["websites"],
-    source: "At Oriens"
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "An earlier personal landing page for Ashwin Badhiye, hand-built with HTML5 and CSS3 and deployed on Netlify. It presents technical background, social links, and project highlights in a lightweight, fast-loading single page.",
+      screenshots: ["images/ashwin_badhiye_old.png"],
+      techStack: [
+        { name: "HTML5", icon: "https://cdn.simpleicons.org/html5/E34F26" },
+        { name: "CSS", icon: "https://cdn.simpleicons.org/css/663399" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+        { name: "Netlify", icon: "https://cdn.simpleicons.org/netlify/00C7B7" },
+      ],
+      highlights: [
+        "Lightweight, hand-coded single-page site",
+        "Fast global delivery via Netlify",
+        "Showcases background, links, and project highlights",
+      ],
+    },
   },
   {
     title: "POSAXChange",
@@ -133,7 +403,25 @@ export const projects: Project[] = [
     image: "images/posaxchange.png",
     link: "https://www.posaxchange.com/",
     tags: ["websites"],
-    source: "At Oriens"
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "A marketplace-integration application that bridges POS systems with major online selling platforms. Built with Next.js and Tailwind CSS, it delivers a fast, modern interface for its sync-and-connect value proposition, and includes integrated online payments and recurring subscription billing so customers can pay for and manage their plans directly in-app.",
+      screenshots: ["images/posaxchange.png"],
+      techStack: [
+        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+        { name: "Payments", icon: "images/payments.svg" },
+        { name: "Subscriptions", icon: "images/subscription.svg" },
+      ],
+      highlights: [
+        "Integrated online payments and recurring subscription billing",
+        "Bridges POS systems with major online selling platforms",
+        "Fast, modern Next.js interface with responsive design",
+      ],
+    },
   },
   {
     title: "POSA Doctor",
@@ -142,7 +430,23 @@ export const projects: Project[] = [
     image: "images/posadoctor.png",
     link: "https://www.posadoctor.com/",
     tags: ["websites"],
-    source: "At Oriens"
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "A product website for POSA Doctor, a health-check and diagnostic tool for retail systems that provides real-time business monitoring and alerting. Built on WordPress and Elementor, it frames the monitoring product for retail operators who need proactive system oversight.",
+      screenshots: ["images/posadoctor.png"],
+      techStack: [
+        { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/ffffff" },
+        { name: "Elementor", icon: "https://cdn.simpleicons.org/elementor/ffffff" },
+        { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+      ],
+      highlights: [
+        "Frames real-time retail system monitoring and alerts",
+        "Clear product-benefit storytelling",
+        "Responsive WordPress/Elementor build",
+      ],
+    },
   },
   {
     title: "MYL Sports",
@@ -151,6 +455,23 @@ export const projects: Project[] = [
     image: "images/mylsports.png",
     link: "https://www.mylsports.com/",
     tags: ["websites"],
-    source: "At Oriens"
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "The website for MYL Sports, a league-management software and services provider for sports organisations. Built on Bootstrap, it presents the SaaS platform and administrative services with a clean, responsive layout aimed at leagues and teams.",
+      screenshots: ["images/mylsports.png"],
+      techStack: [
+        { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap/7952B3" },
+        { name: "HTML5", icon: "https://cdn.simpleicons.org/html5/E34F26" },
+        { name: "CSS", icon: "https://cdn.simpleicons.org/css/663399" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+        { name: "jQuery", icon: "https://cdn.simpleicons.org/jquery/0769AD" },
+      ],
+      highlights: [
+        "Presents league-management SaaS and admin services",
+        "Clean, responsive Bootstrap layout",
+        "Aimed at sports organisations, leagues, and teams",
+      ],
+    },
   }
 ];

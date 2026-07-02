@@ -157,12 +157,6 @@ export function setAllTimeline() {
       0
     )
     .fromTo(
-      ".career-info-box",
-      { opacity: 0 },
-      { opacity: 1, stagger: 0.1, duration: 0.5 },
-      0
-    )
-    .fromTo(
       ".career-dot",
       { animationIterationCount: "infinite" },
       {
@@ -174,18 +168,23 @@ export function setAllTimeline() {
     );
 
   if (window.innerWidth > 1024) {
-    careerTimeline.fromTo(
-      ".career-section",
-      { y: 0 },
-      { y: "20%", duration: 0.5, delay: 0.2 },
-      0
-    );
+    // Scrubbed opacity reveal + parallax only on desktop. On mobile this ties
+    // the text opacity to scroll position and makes it fade in/out, so keep
+    // the career entries fully visible instead.
+    careerTimeline
+      .fromTo(
+        ".career-info-box",
+        { opacity: 0 },
+        { opacity: 1, stagger: 0.1, duration: 0.5 },
+        0
+      )
+      .fromTo(
+        ".career-section",
+        { y: 0 },
+        { y: "20%", duration: 0.5, delay: 0.2 },
+        0
+      );
   } else {
-    careerTimeline.fromTo(
-      ".career-section",
-      { y: 0 },
-      { y: 0, duration: 0.5, delay: 0.2 },
-      0
-    );
+    gsap.set(".career-info-box", { opacity: 1 });
   }
 }

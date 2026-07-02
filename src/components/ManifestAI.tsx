@@ -1,9 +1,5 @@
 import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./styles/ManifestAI.css";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const screenshots = [
   { src: "appscreenshots/splash.png", label: "Begin your Journey within" },
@@ -68,36 +64,54 @@ const ManifestAI = () => {
   const galleryRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
+  // Click-and-drag horizontal scrolling for the screenshot gallery. The
+  // screenshots stay fully visible in their box and the user drags (holds) to
+  // move through them — on desktop via pointer drag, on mobile via native swipe.
   useEffect(() => {
-    const section = sectionRef.current;
     const gallery = galleryRef.current;
-    const track = trackRef.current;
-    if (!section || !gallery || !track || ScrollTrigger.isTouch === 1) return;
+    if (!gallery) return;
 
-    const ctx = gsap.context(() => {
-      const getDistance = () => track.scrollWidth - gallery.clientWidth;
+    let isDown = false;
+    let startX = 0;
+    let startScroll = 0;
+    let moved = false;
 
-      const tween = gsap.to(track, {
-        x: () => -getDistance(),
-        ease: "none",
-        scrollTrigger: {
-          id: "manifest-gallery",
-          trigger: section,
-          start: "top top",
-          end: () => `+=${getDistance()}`,
-          scrub: 1,
-          pin: true,
-          invalidateOnRefresh: true,
-        },
-      });
+    const onPointerDown = (e: PointerEvent) => {
+      isDown = true;
+      moved = false;
+      startX = e.clientX;
+      startScroll = gallery.scrollLeft;
+      gallery.classList.add("dragging");
+    };
+    const onPointerMove = (e: PointerEvent) => {
+      if (!isDown) return;
+      const delta = e.clientX - startX;
+      if (Math.abs(delta) > 3) moved = true;
+      gallery.scrollLeft = startScroll - delta;
+    };
+    const onPointerUp = () => {
+      isDown = false;
+      gallery.classList.remove("dragging");
+    };
+    // Prevent an accidental drag from triggering link/image clicks.
+    const onClickCapture = (e: MouseEvent) => {
+      if (moved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
 
-      return () => {
-        tween.scrollTrigger?.kill();
-        tween.kill();
-      };
-    }, section);
+    gallery.addEventListener("pointerdown", onPointerDown);
+    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointerup", onPointerUp);
+    gallery.addEventListener("click", onClickCapture, true);
 
-    return () => ctx.revert();
+    return () => {
+      gallery.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerUp);
+      gallery.removeEventListener("click", onClickCapture, true);
+    };
   }, []);
 
   return (
@@ -152,7 +166,7 @@ const ManifestAI = () => {
         <div className="manifest-track" ref={trackRef}>
           {screenshots.map((shot, i) => (
             <div className="manifest-slide" key={i}>
-              <img src={shot.src} alt={shot.label} loading="lazy" />
+              <img src={shot.src} alt={shot.label} loading="lazy" draggable={false} />
             </div>
           ))}
         </div>

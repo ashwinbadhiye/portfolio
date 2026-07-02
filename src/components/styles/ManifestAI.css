@@ -115,19 +115,40 @@
   max-width: 480px;
 }
 
-/* ── Pinned Gallery ── */
+/* ── Drag-to-scroll Gallery ── */
 .manifest-gallery {
   height: 640px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
   display: flex;
   align-items: center;
+  cursor: grab;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.manifest-gallery.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.manifest-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+.manifest-gallery::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
 }
 
 .manifest-track {
   display: flex;
   gap: 40px;
-  will-change: transform;
+  padding: 0 4px;
 }
 
 .manifest-slide {
@@ -136,6 +157,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  scroll-snap-align: center;
 }
 
 .manifest-slide img {
@@ -143,6 +165,8 @@
   height: auto;
   display: block;
   filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* ── Features ── */
@@ -375,6 +399,8 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
   }
   .manifest-track {
     transform: none !important;
