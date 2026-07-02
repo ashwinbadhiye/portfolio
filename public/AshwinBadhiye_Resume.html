@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashwin Badhiye — Resume</title>
+  <style>
+    /* ===== ATS-friendly, single-column, print-optimized resume ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #1a1a1a;
+      --muted: #444;
+      --accent: #14486b;
+      --rule: #cfd6dd;
+    }
+
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    body {
+      font-family: "Calibri", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      font-size: 10.5pt;
+      line-height: 1.4;
+      background: #f2f4f6;
+    }
+
+    .page {
+      width: 8.27in;              /* A4 width */
+      min-height: 11.69in;        /* A4 height */
+      margin: 24px auto;
+      padding: 0.5in 0.6in;
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    }
+
+    /* ===== Header ===== */
+    header { text-align: center; margin-bottom: 10px; }
+    header h1 {
+      font-size: 24pt;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--ink);
+    }
+    header .role {
+      font-size: 12pt;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    header .contact {
+      margin-top: 7px;
+      font-size: 9.7pt;
+      color: var(--muted);
+    }
+    header .contact a { color: var(--muted); text-decoration: none; }
+    header .contact span { white-space: nowrap; }
+    header .sep { color: var(--rule); margin: 0 6px; }
+
+    /* ===== Section ===== */
+    section { margin-top: 13px; }
+    h2 {
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent);
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 2px;
+      margin-bottom: 7px;
+    }
+
+    p.summary { text-align: justify; color: var(--muted); }
+
+    /* ===== Experience / Projects entries ===== */
+    .entry { margin-bottom: 10px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .entry-title { font-weight: 700; font-size: 10.8pt; }
+    .entry-title .company { font-weight: 700; }
+    .entry-title .sub { font-weight: 400; font-style: italic; color: var(--muted); }
+    .entry-meta { font-size: 9.5pt; color: var(--muted); white-space: nowrap; }
+    .entry-sub {
+      font-size: 10pt;
+      font-style: italic;
+      color: var(--accent);
+      margin: 1px 0 3px;
+    }
+
+    ul { list-style: none; margin: 3px 0 0; }
+    ul li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 3px;
+      color: var(--muted);
+    }
+    ul li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 8pt;
+      top: 1px;
+    }
+    li .tech { color: #666; font-style: italic; }
+    a.link { color: var(--accent); text-decoration: none; }
+
+    /* ===== Skills ===== */
+    .skills-grid { display: grid; grid-template-columns: max-content 1fr; row-gap: 4px; column-gap: 10px; }
+    .skills-grid .cat { font-weight: 700; color: var(--ink); font-size: 10pt; }
+    .skills-grid .val { color: var(--muted); }
+
+    /* ===== Education ===== */
+    .edu-item { margin-bottom: 7px; }
+    .edu-item .line { display: flex; justify-content: space-between; gap: 12px; }
+    .edu-item .deg { font-weight: 700; }
+    .edu-item .det { color: var(--muted); font-size: 9.8pt; }
+
+    .two-col { display: flex; gap: 30px; }
+    .two-col > div { flex: 1; }
+
+    /* ===== Print ===== */
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { background: #fff; font-size: 10pt; }
+      .page { width: auto; min-height: auto; margin: 0; padding: 0.45in 0.55in; box-shadow: none; }
+      a { color: var(--accent) !important; }
+      .entry { page-break-inside: avoid; }
+      h2 { break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <h1>Ashwin Badhiye</h1>
+      <div class="role">AI Product Developer</div>
+      <div class="contact">
+        <span><a href="mailto:ashwinbadhiye@gmail.com">ashwinbadhiye@gmail.com</a></span>
+        <span class="sep">|</span>
+        <span>+91 91681 48903</span>
+        <span class="sep">|</span>
+        <span>Nagpur, Maharashtra</span>
+        <span class="sep">|</span>
+        <span><a href="https://www.ashwinbadhiye.in/">ashwinbadhiye.in</a></span>
+        <span class="sep">|</span>
+        <span><a href="https://github.com/ashwinbadhiye">github.com/ashwinbadhiye</a></span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary">
+        Product-focused developer who designs, architects, and ships full applications end to end using
+        AI-assisted development. Strong in problem solving, product strategy and direction, UX and workflow
+        design, and system architecture, backed by solid computer-science fundamentals (data structures,
+        algorithms, OOP) and prior hands-on backend and full-stack experience. Specializes in turning real
+        business problems into working AI products — integrating LLMs (OpenAI), Retrieval-Augmented Generation
+        (RAG), and automation — and has delivered multiple production SaaS platforms and Manifest AI, a
+        cross-platform mobile app published under his name on the Apple App Store and Google Play.
+      </p>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="cat">Core Strengths</div>
+        <div class="val">Problem Solving, Product Strategy &amp; Direction, System &amp; Workflow Design, UX/UI Design, Requirement Analysis, Team Leadership</div>
+
+        <div class="cat">AI Development</div>
+        <div class="val">AI-Assisted Development (Cursor, Claude, ChatGPT, GitHub Copilot), Prompt Engineering, LLM / OpenAI Integration, Retrieval-Augmented Generation (RAG), Vector Databases, AI Agents &amp; Automation</div>
+
+        <div class="cat">Foundations</div>
+        <div class="val">Data Structures &amp; Algorithms, Object-Oriented Programming, REST API Design, Relational Databases (SQL)</div>
+
+        <div class="cat">Product Stack</div>
+        <div class="val">React, Next.js, React Native, Node.js, Python / FastAPI, PostgreSQL, MySQL, Prisma, Tailwind CSS</div>
+
+        <div class="cat">CMS &amp; Tools</div>
+        <div class="val">WordPress, WooCommerce, Elementor, Git, GitHub Actions (CI/CD), Firebase, Netlify, Figma</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Work Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title"><span class="company">Freelance</span> <span class="sub">— Independent AI Product Developer</span></div>
+          <div class="entry-meta">Oct 2025 – Present · Nagpur</div>
+        </div>
+        <ul>
+          <li>Design, build, and publish AI-powered products end to end using AI-assisted development — owning product direction, UX, architecture, data modeling, and release.</li>
+          <li>Built and shipped <strong>Manifest AI: Vision into Life</strong>, a cross-platform iOS &amp; Android app published under my name on the Apple App Store and Google Play — implemented goal setting, AI-generated manifestation scripts and affirmations, guided audio sessions, private journaling, vision boards, daily whispers, and streaks.</li>
+          <li>Integrated third-party platforms across products: OpenAI for AI generation, Firebase for authentication and real-time data, RevenueCat for subscriptions and in-app purchases, and AdMob for monetization.</li>
+          <li>Turn real business problems into working products by breaking them into clear technical workflows and directing AI coding tools while owning architecture, quality, and user experience.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title"><span class="company">Oriens DevSecOps</span> <span class="sub">— Software Developer</span></div>
+          <div class="entry-meta">Dec 2023 – Oct 2025 · Nagpur</div>
+        </div>
+        <div class="entry-sub">Backend Development — POSA Salud (Mobile POS for Retail)</div>
+        <ul>
+          <li>Built backend services connecting a legacy Windows POS system with a new mobile app for sales, inventory, and vendor management.</li>
+          <li>Developed RESTful APIs in Java and Python for two-way synchronization between DBF and MySQL databases, ensuring real-time consistency.</li>
+          <li>Integrated third-party platforms such as DoorDash to extend POS functionality for online ordering and delivery.</li>
+          <li>Created a custom Windows installer to automate desktop setup, database syncing, and troubleshooting across multiple retail stores.</li>
+          <li>Optimized database queries and error handling, improving performance, reliability, and scalability for multi-store operations.</li>
+        </ul>
+        <div class="entry-sub" style="margin-top:5px;">WordPress &amp; WooCommerce Development</div>
+        <ul>
+          <li>Designed and delivered 15+ responsive WordPress and WooCommerce websites using Elementor, WPBakery, and Gutenberg.</li>
+          <li>Customized themes and plugins and integrated third-party tools including payment gateways and CRM systems.</li>
+          <li>Implemented SEO strategies, performance optimizations, and mobile-first, cross-browser compatibility, with ongoing maintenance.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title"><span class="company">Culturelligence</span> <span class="sub">— Web Developer</span></div>
+          <div class="entry-meta">Jun 2023 – Nov 2023 · Remote</div>
+        </div>
+        <ul>
+          <li>Designed and updated website content, managed events, and customized layouts using Elementor, MemberPress, and EventPress.</li>
+          <li>Collaborated with cross-functional teams to maintain consistent design while deepening expertise in WordPress CMS and plugin customization.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Projects</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Manifest AI: Vision into Life — iOS &amp; Android App</div>
+          <div class="entry-meta"><a class="link" href="https://ashwinbadhiye.github.io/manifest/index.html">Website</a> &nbsp;·&nbsp; <a class="link" href="https://apps.apple.com/us/app/manifest-ai-vision-into-life/id6775246699">App Store</a></div>
+        </div>
+        <ul>
+          <li>Flagship product — a manifestation app that turns user goals and journals into personalized AI-generated scripts, affirmations, and calming audio sessions; published under my name on the Apple App Store and Google Play.</li>
+          <li>Implemented goal setting, private journaling, AI script &amp; affirmation generation, guided audio, vision boards, daily whispers and streaks, subscriptions, and ads.</li>
+          <li><span class="tech">React Native, OpenAI, Firebase, RevenueCat, AdMob, Google Cloud.</span></li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Zoo Intelligence — AI Animal-Health Monitoring Platform</div>
+          <div class="entry-meta"><a class="link" href="https://aristagorewada.netlify.app/">Live</a></div>
+        </div>
+        <ul>
+          <li>Built a multilingual system where keepers log care notes in any language; AI structures the data, builds per-animal timelines, raises upcoming-care alerts, and powers a chatbot and a RAG-based symptom analyzer.</li>
+          <li><span class="tech">Next.js, TypeScript, OpenAI, Hugging Face embeddings, Vector Search (RAG).</span></li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Service Intelligence Layer — Enterprise Service &amp; Maintenance SaaS</div>
+          <div class="entry-meta"><a class="link" href="https://aristasil.netlify.app/">Live</a></div>
+        </div>
+        <ul>
+          <li>Built a production SaaS with four role-based (RBAC) dashboards, machine-lifecycle tracking, predictive-maintenance insights, and inventory/revenue-leakage analytics.</li>
+          <li><span class="tech">Next.js, React, TypeScript, Prisma, SQLite, NextAuth.js, Recharts.</span></li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">CA AI — AI Vouching &amp; GST-Compliance Engine</div>
+          <div class="entry-meta"><a class="link" href="https://vouching-frontend.onrender.com/">Live</a></div>
+        </div>
+        <ul>
+          <li>Built an AI platform for chartered accountants automating invoice extraction, GSTR-1/3B/2B reconciliation, tax-notice response drafting, and audit documentation across thousands of invoices.</li>
+          <li><span class="tech">Next.js, React, TypeScript, FastAPI, Python, PostgreSQL, OpenAI.</span></li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">ExcelDash — AI Spreadsheet-to-Dashboard Analytics</div>
+          <div class="entry-meta"><a class="link" href="https://exceldash.netlify.app/">Live</a></div>
+        </div>
+        <ul>
+          <li>Built a tool that converts raw Excel/CSV data into interactive KPI dashboards, with an AI insights mode for trends and a built-in data chatbot for natural-language queries.</li>
+          <li><span class="tech">Next.js, React, TypeScript, OpenAI, Recharts.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu-item">
+        <div class="line">
+          <span class="deg">Post Graduate Diploma in Advanced Computing (PG-DAC) — CDAC ACTS, Pune</span>
+          <span class="det">2023</span>
+        </div>
+        <div class="det">Grade A, 77.50% &nbsp;·&nbsp; CCAT Rank: All India Rank 17</div>
+      </div>
+      <div class="edu-item">
+        <div class="line">
+          <span class="deg">Bachelor of Engineering, Mechanical — G. H. Raisoni College of Engineering, Nagpur</span>
+          <span class="det">2014 – 2018</span>
+        </div>
+        <div class="det">CGPA 7.51</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="two-col">
+        <div>
+          <h2>Languages</h2>
+          <p class="summary">English &nbsp;·&nbsp; Hindi &nbsp;·&nbsp; Marathi</p>
+        </div>
+        <div>
+          <h2>Soft Skills</h2>
+          <p class="summary">Communication &nbsp;·&nbsp; Leadership &nbsp;·&nbsp; Teamwork &nbsp;·&nbsp; Problem Solving</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
