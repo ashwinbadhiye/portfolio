@@ -21,7 +21,7 @@
       font-family: "Calibri", "Segoe UI", Arial, sans-serif;
       color: var(--ink);
       font-size: 10.5pt;
-      line-height: 1.4;
+      line-height: 1.25;
       background: #f2f4f6;
     }
 
@@ -58,7 +58,7 @@
     header .sep { color: var(--rule); margin: 0 6px; }
 
     /* ===== Section ===== */
-    section { margin-top: 11px; }
+    section { margin-top: 8px; }
     h2 {
       font-size: 11pt;
       font-weight: 700;
@@ -67,13 +67,13 @@
       color: var(--accent);
       border-bottom: 1.5px solid var(--accent);
       padding-bottom: 2px;
-      margin-bottom: 7px;
+      margin-bottom: 5px;
     }
 
     p.summary { text-align: justify; color: var(--muted); }
 
     /* ===== Experience / Projects entries ===== */
-    .entry { margin-bottom: 8px; }
+    .entry { margin-bottom: 6px; }
     .entry:last-child { margin-bottom: 0; }
     .entry-head {
       display: flex;
@@ -96,7 +96,7 @@
     ul li {
       position: relative;
       padding-left: 14px;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
       color: var(--muted);
     }
     ul li::before {
@@ -116,7 +116,7 @@
     .skills-grid .val { color: var(--muted); }
 
     /* ===== Education ===== */
-    .edu-item { margin-bottom: 7px; }
+    .edu-item { margin-bottom: 5px; }
     .edu-item .line { display: flex; justify-content: space-between; gap: 12px; }
     .edu-item .deg { font-weight: 700; }
     .edu-item .det { color: var(--muted); font-size: 9.8pt; }
@@ -125,10 +125,10 @@
     .two-col > div { flex: 1; }
 
     /* ===== Print ===== */
-    @page { size: A4; margin: 0; }
+    @page { size: A4; margin: 0.3in 0.5in; }
     @media print {
       body { background: #fff; font-size: 10pt; }
-      .page { width: auto; min-height: auto; margin: 0; padding: 0.4in 0.55in; box-shadow: none; }
+      .page { width: auto; min-height: auto; margin: 0; padding: 0; box-shadow: none; }
       a { color: var(--accent) !important; }
       .entry { page-break-inside: avoid; }
       h2 { break-after: avoid; }
@@ -246,7 +246,20 @@
         <ul>
           <li>Flagship product. A manifestation app that turns user goals and journals into personalized AI-generated scripts, affirmations, and calming audio sessions, published under my name on the Apple App Store and Google Play.</li>
           <li>Implemented goal setting, private journaling, AI script &amp; affirmation generation, guided audio, vision boards, daily whispers and streaks, subscriptions, and ads.</li>
+          <li>Owned the product end to end, from concept, UX, and AI pipeline design through store submission and release on iOS and Android.</li>
           <li><span class="tech">React Native, OpenAI, Firebase, RevenueCat, AdMob, Google Cloud.</span></li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">POSA Salud: Mobile POS App (iOS &amp; Android)</div>
+          <div class="entry-meta"><a class="link" href="https://www.posasalud.com/">Website</a> &nbsp;·&nbsp; <a class="link" href="https://apps.apple.com/us/app/posa-salud/id6749905267">App Store</a> &nbsp;·&nbsp; <a class="link" href="https://play.google.com/store/apps/details?id=com.posanywhere.salud&amp;hl=en_IN">Google Play</a></div>
+        </div>
+        <ul>
+          <li>Mobile point-of-sale for iPhone, iPad, and Android. As backend developer, built the REST APIs and the full offline-to-cloud two-way sync between a legacy Windows (DBF) desktop POS and a cloud MySQL database, covering every offline, reconnect, and conflict scenario.</li>
+          <li>Integrated Global Payments for physical card-reader and online card payments, and DoorDash for online ordering; live on the App Store and Google Play.</li>
+          <li><span class="tech">Python, MySQL, REST APIs, Two-way Sync, Global Payments.</span></li>
         </ul>
       </div>
 
@@ -257,6 +270,7 @@
         </div>
         <ul>
           <li>Built a multilingual system where keepers log care notes in any language; AI structures the data, builds per-animal timelines, raises upcoming-care alerts, and powers a multi-agent chatbot and a document-grounded, RAG-based symptom analyzer.</li>
+          <li>Cuts hours of manual record-keeping by auto-structuring free-text notes and proactively flagging upcoming vaccinations, deworming, and health checks.</li>
           <li><span class="tech">Next.js, TypeScript, OpenAI, Multi-Agent Architecture, Document Grounding, Vector Search (RAG).</span></li>
         </ul>
       </div>
@@ -268,6 +282,7 @@
         </div>
         <ul>
           <li>Built a production SaaS with four role-based (RBAC) dashboards, machine-lifecycle tracking, multi-agent AI insights for predictive maintenance, and inventory/revenue-leakage analytics.</li>
+          <li>Gives the manufacturer a national control tower over dealers, machine health, service compliance, spare-parts demand, and missed-service revenue.</li>
           <li><span class="tech">Next.js, React, TypeScript, Prisma, Multi-Agent Architecture, Vector DB, Recharts.</span></li>
         </ul>
       </div>
@@ -279,6 +294,7 @@
         </div>
         <ul>
           <li>Built an AI platform for chartered accountants automating invoice extraction, GSTR-1/3B/2B reconciliation, tax-notice response drafting, and audit documentation across thousands of invoices.</li>
+          <li>Turns days of manual vouching into an automated, auditable pipeline, letting CAs focus on judgment instead of data entry.</li>
           <li><span class="tech">Next.js, React, TypeScript, FastAPI, Python, PostgreSQL, OpenAI.</span></li>
         </ul>
       </div>
@@ -290,7 +306,20 @@
         </div>
         <ul>
           <li>Built a tool that converts raw Excel/CSV data into interactive KPI dashboards, with an AI insights mode for trends and a built-in data chatbot for natural-language queries.</li>
+          <li>Standard mode delivers instant KPIs and charts; AI mode adds deeper trends, a strategic summary, and a one-click shareable Data Dossier.</li>
           <li><span class="tech">Next.js, React, TypeScript, OpenAI, Recharts.</span></li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Websites: 15+ Delivered Across the US, UK &amp; India</div>
+          <div class="entry-meta">Oriens &amp; Freelance</div>
+        </div>
+        <ul>
+          <li>Designed and delivered 15+ responsive websites for international clients across the US, UK, and India, spanning retail and point-of-sale, industrial and fire safety, construction materials, religious and community organizations, sports, IT services, and SaaS.</li>
+          <li>Built on WordPress, WooCommerce, Elementor, WPBakery, and Gutenberg as well as custom React/Next.js, with integrations including Global Payments donations, Zoho live-chat, payment gateways, CRM and membership systems, and SEO and performance optimization.</li>
+          <li><span class="tech">WordPress, WooCommerce, Elementor, WPBakery, React, Next.js, Tailwind CSS, PHP, Zoho, Global Payments.</span></li>
         </ul>
       </div>
     </section>

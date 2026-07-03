@@ -27,13 +27,23 @@
   font-size: 34px;
   font-weight: 400;
   text-align: center;
-  margin: 0 0 45px;
+  margin: 0 0 14px;
   color: var(--textColor);
   letter-spacing: 0.5px;
 }
 
 .work-group-title > span {
   color: var(--accentColor);
+}
+
+.work-group-desc {
+  max-width: 620px;
+  margin: 0 auto 45px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #a8a8a8;
 }
 
 .work-section h2 {
@@ -309,7 +319,12 @@
   }
   .work-group-title {
     font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .work-group-desc {
+    font-size: 14px;
     margin-bottom: 30px;
+    padding: 0 15px;
   }
   .work-group {
     margin-bottom: 60px;

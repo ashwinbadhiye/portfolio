@@ -76,6 +76,9 @@ const Work = () => {
           <h3 className="work-group-title">
             AI, Web &amp; Mobile <span>Apps</span>
           </h3>
+          <p className="work-group-desc">
+            AI-powered products and full-stack applications I designed, built, and shipped end to end — from a published mobile app to enterprise SaaS platforms.
+          </p>
           <div className="projects-grid">
             {appProjects.map((project, index) => renderCard(project, index))}
           </div>
@@ -85,6 +88,9 @@ const Work = () => {
           <h3 className="work-group-title">
             <span>Websites</span>
           </h3>
+          <p className="work-group-desc">
+            15+ responsive websites and platforms delivered for clients across the US, UK, and India, with payment, chatbot, CRM, and SEO integrations.
+          </p>
           <div className="projects-grid">
             {websiteProjects.map((project, index) => renderCard(project, index))}
           </div>
