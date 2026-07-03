@@ -42,9 +42,19 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               {project.source}
             </span>
           </div>
-          <a href={project.link} target="_blank" rel="noreferrer" className="pm-visit" data-cursor="disable">
-            Visit Site <ExternalLinkIcon />
-          </a>
+          <div className="pm-actions">
+            {details?.links?.length ? (
+              details.links.map((l, i) => (
+                <a key={i} href={l.url} target="_blank" rel="noreferrer" className="pm-visit" data-cursor="disable">
+                  {l.label} <ExternalLinkIcon />
+                </a>
+              ))
+            ) : (
+              <a href={project.link} target="_blank" rel="noreferrer" className="pm-visit" data-cursor="disable">
+                Visit Site <ExternalLinkIcon />
+              </a>
+            )}
+          </div>
         </div>
 
         <div className="pm-gallery">

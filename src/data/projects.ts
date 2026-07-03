@@ -3,11 +3,17 @@ export interface TechItem {
   icon?: string; // icon URL (e.g. https://cdn.simpleicons.org/react/61DAFB)
 }
 
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
+
 export interface ProjectDetails {
   longDescription: string;
   screenshots: string[];
   techStack: TechItem[];
   highlights?: string[];
+  links?: ProjectLink[]; // extra store/site links shown in the modal (e.g. App Store, Google Play)
 }
 
 export interface Project {
@@ -48,6 +54,8 @@ export const projects: Project[] = [
         { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
         { name: "Hugging Face", icon: "https://cdn.simpleicons.org/huggingface/FFD21E" },
         { name: "Vector DB (RAG)", icon: "images/vector.svg" },
+        { name: "Document Grounding", icon: "images/document.svg" },
+        { name: "Multi-Agent Architecture", icon: "images/agents.svg" },
       ],
       highlights: [
         "Multilingual logging — keepers record daily food, cleaning, and vaccination notes as free text in any language, auto-structured into the database",
@@ -78,6 +86,9 @@ export const projects: Project[] = [
         { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
         { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
         { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "Multi-Agent Architecture", icon: "images/agents.svg" },
+        { name: "Document Grounding", icon: "images/document.svg" },
+        { name: "Vector DB", icon: "images/vector.svg" },
         { name: "shadcn/ui", icon: "https://cdn.simpleicons.org/shadcnui/ffffff" },
         { name: "Prisma", icon: "https://cdn.simpleicons.org/prisma/ffffff" },
         { name: "SQLite", icon: "https://cdn.simpleicons.org/sqlite/ffffff" },
@@ -194,6 +205,38 @@ export const projects: Project[] = [
     },
   },
   {
+    title: "POSA Salud",
+    description: "Global Payments-integrated mobile point-of-sale for iPhone, iPad, and Android, with full offline-to-cloud sync between a legacy Windows (DBF) POS and the mobile app.",
+    tools: ["Python", "MySQL", "REST APIs", "Global Payments"],
+    image: "images/posa_salud_app.png",
+    link: "https://play.google.com/store/apps/details?id=com.posanywhere.salud&hl=en_IN",
+    tags: ["mobile apps"],
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "POSA Salud is a mobile point-of-sale app that turns iPhone, iPad, and Android devices into a full retail POS for sales, orders, returns, and inventory. As the backend developer, I designed and built the REST APIs powering the app and, most critically, the full two-way synchronization layer that keeps two very different systems in lockstep: a legacy Windows desktop POS that runs offline on DBF files, and the mobile app running on a cloud MySQL database. This covered every sync scenario, from offline edits and reconnection to conflict handling, keeping sales, inventory, and vendor data consistent across both systems. I also integrated Global Payments for both physical card-reader and online card payments, and connected third-party services such as DoorDash for online ordering.",
+      screenshots: ["images/posa_salud_app.png"],
+      techStack: [
+        { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
+        { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
+        { name: "REST APIs", icon: "images/api.svg" },
+        { name: "Two-way Sync", icon: "images/subscription.svg" },
+        { name: "Global Payments", icon: "images/payments.svg" },
+      ],
+      highlights: [
+        "Built the REST APIs powering the POSA Salud mobile POS app",
+        "Engineered full two-way sync between an offline Windows (DBF) desktop POS and the cloud MySQL mobile app, covering every offline, reconnect, and conflict scenario",
+        "Integrated Global Payments for both physical card-reader and online card payments",
+        "Connected third-party services such as DoorDash for online ordering",
+      ],
+      links: [
+        { label: "App Store", url: "https://apps.apple.com/us/app/posa-salud/id6749905267" },
+        { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.posanywhere.salud&hl=en_IN" },
+        { label: "Website", url: "https://www.posasalud.com/" },
+      ],
+    },
+  },
+  {
     title: "Atlantic Awning",
     description: "Premium custom awning and canopy solutions for residential and commercial spaces, designed for New England weather durability.",
     tools: ["WordPress", "Elementor", "Responsive Design"],
@@ -267,6 +310,86 @@ export const projects: Project[] = [
         "Secure online donations powered by a Global Payments Integrated gateway",
         "Integrated mass and event schedules for the congregation",
         "Accessible, welcoming design for a broad community audience",
+      ],
+    },
+  },
+  {
+    title: "POSA Doctor",
+    description: "Health-check diagnostic tool for retail systems providing real-time business monitoring and alert management.",
+    tools: ["WordPress", "Elementor", "System Monitoring"],
+    image: "images/posadoctor.png",
+    link: "https://www.posadoctor.com/",
+    tags: ["websites"],
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "A product website for POSA Doctor, a health-check and diagnostic tool for retail systems that provides real-time business monitoring and alerting. Built on WordPress and Elementor, it frames the monitoring product for retail operators who need proactive system oversight, and includes a Zoho-integrated live chat widget for visitor support.",
+      screenshots: ["images/posadoctor.png"],
+      techStack: [
+        { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/ffffff" },
+        { name: "Elementor", icon: "https://cdn.simpleicons.org/elementor/ffffff" },
+        { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+        { name: "Zoho", icon: "https://cdn.simpleicons.org/zoho/E42527" },
+      ],
+      highlights: [
+        "Frames real-time retail system monitoring and alerts",
+        "Zoho-integrated live chat widget for customer support",
+        "Responsive WordPress/Elementor build",
+      ],
+    },
+  },
+  {
+    title: "POSA Salud",
+    description: "Product marketing website for POSA Salud, the mobile POS for iPhone, iPad, and Android. A fast React and Vite single-page site with signup, login, and a Zoho-integrated live chat.",
+    tools: ["React", "Vite", "Tailwind CSS", "Zoho"],
+    image: "images/posa_salud.png",
+    link: "https://www.posasalud.com/",
+    tags: ["websites"],
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "The product marketing website for POSA Salud, the mobile point-of-sale app for iPhone, iPad, and Android. Built as a fast React and Vite single-page app, it presents the product's features, pricing, and FAQs, provides account signup and login, and includes a Zoho-integrated live chat widget for support. The backend, sync, and payment work behind the product is covered in the POSA Salud mobile-app project.",
+      screenshots: ["images/posa_salud.png"],
+      techStack: [
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "Vite", icon: "https://cdn.simpleicons.org/vite/646CFF" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+        { name: "Zoho", icon: "https://cdn.simpleicons.org/zoho/E42527" },
+      ],
+      highlights: [
+        "Fast React and Vite single-page marketing site with account signup and login",
+        "Zoho-integrated live chat widget for customer support",
+        "Features, pricing, and FAQ pages for the POSA Salud mobile POS",
+      ],
+    },
+  },
+  {
+    title: "POSAXChange",
+    description: "Powerful marketplace integration application bridging the gap between POS systems and major online selling platforms.",
+    tools: ["Next.js", "Tailwind CSS", "Marketplace API"],
+    image: "images/posaxchange.png",
+    link: "https://www.posaxchange.com/",
+    tags: ["websites"],
+    source: "Oriens DevSecOps",
+    details: {
+      longDescription:
+        "A marketplace-integration application that bridges POS systems with major online selling platforms. Built with Next.js and Tailwind CSS, it delivers a fast, modern interface for its sync-and-connect value proposition, includes integrated online payments and recurring subscription billing so customers can pay for and manage their plans directly in-app, and offers a Zoho-integrated live chat widget for support.",
+      screenshots: ["images/posaxchange.png"],
+      techStack: [
+        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+        { name: "Payments", icon: "images/payments.svg" },
+        { name: "Subscriptions", icon: "images/subscription.svg" },
+        { name: "Zoho", icon: "https://cdn.simpleicons.org/zoho/E42527" },
+      ],
+      highlights: [
+        "Integrated online payments and recurring subscription billing",
+        "Zoho-integrated live chat widget for customer support",
+        "Bridges POS systems with major online selling platforms",
       ],
     },
   },
@@ -393,58 +516,6 @@ export const projects: Project[] = [
         "Lightweight, hand-coded single-page site",
         "Fast global delivery via Netlify",
         "Showcases background, links, and project highlights",
-      ],
-    },
-  },
-  {
-    title: "POSAXChange",
-    description: "Powerful marketplace integration application bridging the gap between POS systems and major online selling platforms.",
-    tools: ["Next.js", "Tailwind CSS", "Marketplace API"],
-    image: "images/posaxchange.png",
-    link: "https://www.posaxchange.com/",
-    tags: ["websites"],
-    source: "Oriens DevSecOps",
-    details: {
-      longDescription:
-        "A marketplace-integration application that bridges POS systems with major online selling platforms. Built with Next.js and Tailwind CSS, it delivers a fast, modern interface for its sync-and-connect value proposition, and includes integrated online payments and recurring subscription billing so customers can pay for and manage their plans directly in-app.",
-      screenshots: ["images/posaxchange.png"],
-      techStack: [
-        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
-        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
-        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
-        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
-        { name: "Payments", icon: "images/payments.svg" },
-        { name: "Subscriptions", icon: "images/subscription.svg" },
-      ],
-      highlights: [
-        "Integrated online payments and recurring subscription billing",
-        "Bridges POS systems with major online selling platforms",
-        "Fast, modern Next.js interface with responsive design",
-      ],
-    },
-  },
-  {
-    title: "POSA Doctor",
-    description: "Health-check diagnostic tool for retail systems providing real-time business monitoring and alert management.",
-    tools: ["WordPress", "Elementor", "System Monitoring"],
-    image: "images/posadoctor.png",
-    link: "https://www.posadoctor.com/",
-    tags: ["websites"],
-    source: "Oriens DevSecOps",
-    details: {
-      longDescription:
-        "A product website for POSA Doctor, a health-check and diagnostic tool for retail systems that provides real-time business monitoring and alerting. Built on WordPress and Elementor, it frames the monitoring product for retail operators who need proactive system oversight.",
-      screenshots: ["images/posadoctor.png"],
-      techStack: [
-        { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/ffffff" },
-        { name: "Elementor", icon: "https://cdn.simpleicons.org/elementor/ffffff" },
-        { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
-        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
-      ],
-      highlights: [
-        "Frames real-time retail system monitoring and alerts",
-        "Clear product-benefit storytelling",
-        "Responsive WordPress/Elementor build",
       ],
     },
   },
