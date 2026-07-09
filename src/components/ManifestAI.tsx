@@ -223,23 +223,7 @@ const ManifestAI = () => {
               >
                 Visit App Website
               </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.aristaai.manifestai"
-                target="_blank"
-                rel="noreferrer"
-                className="manifest-btn manifest-btn-secondary"
-              >
-                Get it on Google Play
-              </a>
             </div>
-            <a
-              href="https://ashwinbadhiye.github.io/manifest/privacy.html"
-              target="_blank"
-              rel="noreferrer"
-              className="manifest-link"
-            >
-              Privacy Policy
-            </a>
           </div>
         </div>
       </div>
