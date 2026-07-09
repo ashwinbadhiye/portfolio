@@ -84,28 +84,11 @@
   transform: scale(1.04);
 }
 
-.manifest-store-badge--disabled {
-  opacity: 0.4;
-  cursor: default;
-  pointer-events: none;
-}
-
 .manifest-badge-img {
   display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
-}
-
-.manifest-badge-label {
-  font-size: 11px;
-  color: #888;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-}
-
-.manifest-badge-label--live {
-  color: var(--accentColor);
 }
 
 .manifest-credit {

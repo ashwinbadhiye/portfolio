@@ -144,16 +144,19 @@ const ManifestAI = () => {
               alt="Download on the App Store"
               className="manifest-badge-img"
             />
-            <span className="manifest-badge-label manifest-badge-label--live">Released</span>
           </a>
-          <div className="manifest-store-badge manifest-store-badge--disabled">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.aristaai.manifestai"
+            target="_blank"
+            rel="noreferrer"
+            className="manifest-store-badge"
+          >
             <img
               src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
               alt="Get it on Google Play"
               className="manifest-badge-img"
             />
-            <span className="manifest-badge-label">Closed Testing</span>
-          </div>
+          </a>
         </div>
 
         <p className="manifest-credit">
@@ -220,8 +223,13 @@ const ManifestAI = () => {
               >
                 Visit App Website
               </a>
-              <a href="#contact" className="manifest-btn manifest-btn-secondary">
-                Request Android Build
+              <a
+                href="https://play.google.com/store/apps/details?id=com.aristaai.manifestai"
+                target="_blank"
+                rel="noreferrer"
+                className="manifest-btn manifest-btn-secondary"
+              >
+                Get it on Google Play
               </a>
             </div>
             <a
