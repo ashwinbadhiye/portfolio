@@ -72,23 +72,32 @@
 
 .manifest-store-badge {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 7px;
+  justify-content: center;
   text-decoration: none;
   transition: transform 0.25s ease, opacity 0.25s ease;
-  width: 160px;
 }
 
 .manifest-store-badge:hover {
   transform: scale(1.04);
 }
 
+/* Size the badges by height so both stores read as equal-sized buttons.
+   The Apple SVG has almost no internal padding, while Google's PNG bakes
+   in a wide transparent margin, so the Play badge is set taller to make
+   the actual buttons match visually. */
 .manifest-badge-img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: auto;
   object-fit: contain;
+}
+
+.manifest-badge-img--apple {
+  height: 44px;
+}
+
+.manifest-badge-img--play {
+  height: 66px;
 }
 
 .manifest-credit {
