@@ -39,9 +39,12 @@ const CurrentlyBuilding = () => {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+    // Desktop-only reveal — see note in TechStackCloud. Prevents the section
+    // being left invisible on mobile if the ScrollTrigger doesn't fire.
+    if (window.innerWidth <= 1024) return;
     const ctx = gsap.context(() => {
       gsap.from(".cb-reveal", {
-        scrollTrigger: { trigger: el, start: "top 72%" },
+        scrollTrigger: { trigger: el, start: "top 85%" },
         opacity: 0,
         y: 40,
         duration: 0.9,

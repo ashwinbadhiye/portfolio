@@ -3,7 +3,9 @@
   inset: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0;
+  /* Sit firmly behind all page content. A positioned z-index:0 layer can paint
+     above non-positioned in-flow sections, so use a negative index. */
+  z-index: -1;
   pointer-events: none;
   opacity: 0.5;
 }

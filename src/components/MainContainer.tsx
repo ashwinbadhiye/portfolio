@@ -12,6 +12,7 @@ import Work from "./Work";
 import TechStackCloud from "./TechStackCloud";
 import CurrentlyBuilding from "./CurrentlyBuilding";
 import SiteParticles from "./SiteParticles";
+import ErrorBoundary from "./ErrorBoundary";
 import setSplitText from "./utils/splitText";
 
 // Old 3D physics tech-stack section — kept in the tree, temporarily disabled in
@@ -37,7 +38,9 @@ const MainContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="container-main">
-      <SiteParticles />
+      <ErrorBoundary name="SiteParticles">
+        <SiteParticles />
+      </ErrorBoundary>
       <Cursor />
       <Navbar />
       <SocialIcons />
@@ -49,7 +52,9 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <About />
             <WhatIDo />
             <ManifestAI />
-            <CurrentlyBuilding />
+            <ErrorBoundary name="CurrentlyBuilding">
+              <CurrentlyBuilding />
+            </ErrorBoundary>
             <Career />
             <Work />
             {/* Old 3D physics tech-stack section — kept for now, replaced by the
@@ -57,7 +62,9 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             {/* <Suspense fallback={<div>Loading....</div>}>
               <TechStack />
             </Suspense> */}
-            <TechStackCloud />
+            <ErrorBoundary name="TechStackCloud">
+              <TechStackCloud />
+            </ErrorBoundary>
             <Contact />
           </div>
         </div>

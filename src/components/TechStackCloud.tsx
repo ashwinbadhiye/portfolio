@@ -16,9 +16,14 @@ const TechStackCloud = () => {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+    // Scroll reveal is desktop-only. On mobile/touch the ScrollTrigger can fail
+    // to fire (ScrollSmoother behaves differently there), which would leave the
+    // "from" opacity:0 stuck and blank the section. Skipping it keeps content
+    // fully visible on mobile.
+    if (window.innerWidth <= 1024) return;
     const ctx = gsap.context(() => {
       gsap.from(".tsc-reveal", {
-        scrollTrigger: { trigger: el, start: "top 75%" },
+        scrollTrigger: { trigger: el, start: "top 85%" },
         opacity: 0,
         y: 40,
         duration: 0.9,
