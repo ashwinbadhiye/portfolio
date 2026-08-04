@@ -1,0 +1,44 @@
+.skill-rings {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.skill-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: skill-ring-spin var(--sr-duration, 34s) linear infinite;
+}
+
+.skill-ring--reverse {
+  animation-direction: reverse;
+}
+
+.skill-ring-char {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transform-origin: center;
+  white-space: pre;
+}
+
+@keyframes skill-ring-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-ring {
+    animation: none;
+  }
+}

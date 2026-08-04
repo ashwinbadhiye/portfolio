@@ -16,15 +16,15 @@ const Contact = () => {
                 rel="noreferrer"
                 data-cursor="disable"
               >
-                LinkedIn — ashwinbadhiye
+                LinkedIn: ashwinbadhiye
               </a>
             </p>
             <h4>Education</h4>
             <p>
-              Post Graduate Diploma in Advanced Computing (PG-DAC) - CDAC ACTS, Pune — 2022-2023
+              Post Graduate Diploma in Advanced Computing (PG-DAC), CDAC ACTS, Pune, 2022-2023
             </p>
             <p>
-              B.E. Mechanical , G H Raisoni College of Engineering, Nagpur —
+              B.E. Mechanical, G H Raisoni College of Engineering, Nagpur,
               2014-2018
             </p>
           </div>

@@ -1,0 +1,162 @@
+.tsc-section {
+  position: relative;
+  width: 100%;
+  padding: 90px 0 110px;
+  overflow: hidden;
+}
+
+.tsc-particles {
+  z-index: 0;
+}
+
+.tsc-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tsc-title {
+  margin: 0 0 10px;
+}
+
+.tsc-title span {
+  color: var(--accentColor);
+}
+
+.tsc-sub {
+  max-width: 460px;
+  margin-bottom: 44px;
+}
+
+/* ── Category skill bars (titles + centered scrolling bars) ── */
+.tsc-bars {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.tsc-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.tsc-bar-cat {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tsc-bar-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* symmetric edge fade so the bar reads as centered */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.tsc-bar-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: max-content;
+  margin: 0 auto;
+  white-space: nowrap;
+  will-change: transform;
+  animation: tsc-bar-scroll var(--tsc-bar-duration, 20s) linear infinite;
+}
+
+.tsc-bar--reverse .tsc-bar-track {
+  animation-direction: reverse;
+}
+
+.tsc-bar:hover .tsc-bar-track {
+  animation-play-state: paused;
+}
+
+.tsc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd3dd;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.tsc-chip img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* three copies of the content -> move by a third for a seamless loop */
+@keyframes tsc-bar-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+.tsc-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tsc-card {
+  position: relative;
+  width: 720px;
+  height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(94, 234, 212, 0.06), transparent 60%),
+    rgba(255, 255, 255, 0.015);
+}
+
+.tsc-cloud {
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (max-width: 900px) {
+  .tsc-title {
+    font-size: 34px;
+  }
+  .tsc-card {
+    width: 340px;
+    height: 340px;
+  }
+  /* rings get cramped on small screens — hide the outer skill rings */
+  .tsc-card .skill-rings {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .tsc-card {
+    width: 300px;
+    height: 300px;
+  }
+}

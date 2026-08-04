@@ -6,7 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          I'm an AI &amp; Software Engineer who turns real problems into working products. Using AI-assisted development, I design, architect, and ship full applications end to end, owning product direction, UX, and system architecture. I've delivered multiple production SaaS platforms along with Manifest AI, a cross-platform app published on the App Store and Google Play. Backed by strong computer-science fundamentals and hands-on backend and full-stack experience, I integrate LLMs (OpenAI), RAG, and automation to build intelligent, reliable, user-focused software.
+          I'm an AI and Software Engineer, and I like turning real problems into products people actually use. I work across the whole build, from product direction and UX to the system architecture underneath, and I lean on AI-assisted development to move quickly. So far I've shipped several production SaaS platforms and Manifest AI, a cross-platform app that's live on the App Store and Google Play. My background is in computer science with a lot of hands-on backend and full-stack work, and these days I spend most of my time integrating LLMs (OpenAI), RAG, and automation into software that's reliable and genuinely useful.
         </p>
       </div>
     </div>

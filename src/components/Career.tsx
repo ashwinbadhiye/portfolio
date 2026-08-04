@@ -21,33 +21,34 @@ const Career = () => {
               <h3>NOW</h3>
             </div>
             <p>
-              Designing and shipping AI-powered SaaS products and automation
-              tools end to end — from product direction to deployment.
+              I design and ship AI-powered SaaS products and automation tools
+              from first idea to deployment.
               <li>
-                Manifest AI — my flagship: an iOS &amp; Android app that turns
-                goals and private journals into personalized AI manifestation
+                Manifest AI is my flagship. It's an iOS and Android app that
+                turns goals and private journals into personalized manifestation
                 scripts, affirmations, and calming audio sessions.
               </li>
               <li>
-                Zoo Intelligence — multilingual animal-health monitoring with AI
-                timelines, upcoming-care alerts, a chatbot, and a RAG-based
+                Zoo Intelligence does multilingual animal-health monitoring, with
+                AI timelines, upcoming-care alerts, a chatbot, and a RAG-based
                 symptom analyzer.
               </li>
               <li>
-                Service Intelligence Layer — an enterprise service &amp;
+                Service Intelligence Layer is an enterprise service and
                 predictive-maintenance platform with role-based dashboards.
               </li>
               <li>
-                CA AI — an AI vouching &amp; GST-compliance engine for chartered
-                accountants: invoice extraction, GSTR-1/3B/2B reconciliation,
-                tax-notice response drafting, and audit documentation.
+                CA AI is a vouching and GST-compliance engine for chartered
+                accountants. It handles invoice extraction, GSTR-1/3B/2B
+                reconciliation, tax-notice response drafting, and audit
+                documentation.
               </li>
               <li>
-                ExcelDash — turns raw spreadsheets into interactive KPI
-                dashboards with an AI insights mode and a data chatbot.
+                ExcelDash turns raw spreadsheets into interactive KPI dashboards
+                with an AI insights mode and a data chatbot.
               </li>
-              Plus supporting web apps and tools such as a web asset scraper —
-              built with React Native, Next.js, React, TypeScript,
+              Alongside these I build supporting web apps and tools, like a web
+              asset scraper, using React Native, Next.js, React, TypeScript,
               Python/FastAPI, and OpenAI.
             </p>
           </div>
@@ -61,11 +62,11 @@ const Career = () => {
             </div>
             <p>
               <li>
-                Backend Development – POSA Salud (Mobile POS for Liquor Stores)
+                Backend Development: POSA Salud (Mobile POS for Liquor Stores)
               </li>
               Built backend services connecting a Windows POS system with a
               mobile app for sales, inventory, and vendor management. Developed
-              RESTful APIs in Java and Python for DBF–MySQL synchronization,
+              RESTful APIs in Java and Python for DBF to MySQL synchronization,
               integrated third-party platforms like DoorDash, and created a
               Windows installer for automated deployment. Improved performance,
               reliability, and scalability through query optimization and error

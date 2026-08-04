@@ -1,4 +1,6 @@
 import { useRef, useEffect } from "react";
+import AuroraText from "./effects/AuroraText";
+import BorderBeam from "./effects/BorderBeam";
 import "./styles/ManifestAI.css";
 
 const screenshots = [
@@ -24,7 +26,7 @@ const features = [
   { title: "Script History & Progress", desc: "Revisit past manifestations and track how your goals evolve over time." },
   { title: "Daily Whispers & Streaks", desc: "Gentle reminders and streak tracking that fit into a real daily routine." },
   { title: "Vision Boards", desc: "Visualize your goals with tiles, quotes and imagery in your own Dream Life board." },
-  { title: "Calm, Distraction-Free Design", desc: "No noisy feeds, no endless scrolling — just a clean, wellness-inspired experience." },
+  { title: "Calm, Distraction-Free Design", desc: "No noisy feeds and no endless scrolling, just a clean, wellness-inspired experience." },
 ];
 
 const philosophy = [
@@ -120,13 +122,13 @@ const ManifestAI = () => {
         <img className="manifest-icon" src="images/app-icon.png" alt="Manifest AI app icon" />
         <span className="manifest-eyebrow">Flagship Project</span>
         <h2>
-          Manifest <span>AI</span>
+          Manifest <span><AuroraText>AI</AuroraText></span>
         </h2>
         <p className="manifest-tagline">
-          Vision into Life — make your vision feel real, in your own words.
+          Vision into Life. Make your vision feel real, in your own words.
         </p>
         <p className="manifest-description">
-          Manifest AI transforms your goals and private journal entries into personalized manifestation
+          Manifest AI turns your goals and private journal entries into personalized manifestation
           scripts you can listen to like calming guided meditations. Whether you're a busy professional, a
           student preparing for exams, or someone building a healthier daily routine, it helps you gain
           clarity, stay motivated, and take consistent action toward the life you want.
@@ -180,6 +182,7 @@ const ManifestAI = () => {
         <div className="manifest-features-grid">
           {features.map((f, i) => (
             <div className="manifest-feature-card" key={i}>
+              <BorderBeam radius={16} duration={7} delay={i / features.length} />
               <h4>{f.title}</h4>
               <p>{f.desc}</p>
             </div>

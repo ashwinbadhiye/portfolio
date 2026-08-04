@@ -1,0 +1,213 @@
+.cb-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.cb-inner {
+  position: relative;
+}
+
+.cb-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 60px;
+}
+
+.cb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accentColor);
+  border: 1px solid rgba(94, 234, 212, 0.3);
+  border-radius: 100px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+}
+
+.cb-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accentColor);
+  box-shadow: 0 0 0 0 rgba(94, 234, 212, 0.6);
+  animation: cb-pulse 1.8s infinite;
+}
+
+@keyframes cb-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(94, 234, 212, 0.55); }
+  70% { box-shadow: 0 0 0 10px rgba(94, 234, 212, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(94, 234, 212, 0); }
+}
+
+.cb-title {
+  font-size: 56px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.cb-sub {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #8b95a3;
+}
+
+.cb-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* terminal spans left, flow sits top-right, listings bottom-right */
+.cb-terminal-wrap {
+  grid-row: span 2;
+  display: flex;
+  align-items: stretch;
+}
+.cb-terminal-wrap .terminal {
+  max-width: none;
+  width: 100%;
+}
+
+/* ── Flow diagram ── */
+.cb-flow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 28px 24px;
+  min-height: 130px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.cb-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.cb-node-emoji {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: #0d1420;
+  border: 1px solid rgba(94, 234, 212, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.cb-node--hub .cb-node-emoji {
+  border-color: rgba(94, 234, 212, 0.6);
+  box-shadow: 0 0 24px rgba(94, 234, 212, 0.25);
+}
+
+.cb-node-label {
+  font-size: 11px;
+  color: #9aa4b2;
+  white-space: nowrap;
+}
+
+/* ── Listings ── */
+.cb-listings {
+  display: flex;
+  flex-direction: column;
+}
+
+.cb-listings-title {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #6b7684;
+  margin-bottom: 14px;
+}
+
+.cb-job {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cb-job-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 15px;
+}
+
+.cb-job-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+}
+
+.cb-job-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.cb-job-company {
+  font-size: 12px;
+  color: #7d8794;
+}
+
+.cb-job-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.cb-job-type {
+  font-size: 11px;
+  color: #8b95a3;
+}
+
+.cb-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accentColor);
+}
+
+.cb-cta {
+  text-align: center;
+  margin-top: 44px;
+}
+
+.cb-cta-note {
+  font-size: 13px;
+  color: #6b7684;
+  letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 900px) {
+  .cb-title {
+    font-size: 38px;
+  }
+  .cb-grid {
+    grid-template-columns: 1fr;
+  }
+  .cb-terminal-wrap {
+    grid-row: auto;
+  }
+}

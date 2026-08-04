@@ -1,0 +1,27 @@
+.animated-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.animated-list-item {
+  animation: animated-list-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes animated-list-in {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-list-item {
+    animation: none;
+  }
+}

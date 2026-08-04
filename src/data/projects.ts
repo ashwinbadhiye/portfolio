@@ -38,7 +38,7 @@ export const projects: Project[] = [
     source: "Freelance",
     details: {
       longDescription:
-        "Zoo Intelligence is an AI-driven animal health monitoring system built for Gorewada Zoo's Sangai deer conservation program. A zookeeper simply types daily observations — food, cleaning, vaccinations, treatments — as free text in any language, and AI parses and translates each note into clean, structured records in the output language. Every entry feeds a per-animal timeline that becomes a complete life history for each deer. On top of that data sit four AI capabilities: automatic alerts for upcoming events like vaccinations and deworming; an AI chatbot that answers questions about any animal's past, present, and future (e.g. 'is Raja vaccinated?' or 'when is the next booster due?'); and a symptom analyzer where a keeper describes a symptom and the AI retrieves a likely diagnosis, recommended actions, and medications by combining the animal's own history with medical knowledge from the web. Retrieval is powered by on-device embeddings and a vector search layer, so answers stay grounded in the zoo's real records.",
+        "Zoo Intelligence is an AI-driven animal health monitoring system built for Gorewada Zoo's Sangai deer conservation program. A zookeeper simply types daily observations like food, cleaning, vaccinations, and treatments as free text in any language, and AI parses and translates each note into clean, structured records in the output language. Every entry feeds a per-animal timeline that becomes a complete life history for each deer. On top of that data sit four AI capabilities: automatic alerts for upcoming events like vaccinations and deworming; an AI chatbot that answers questions about any animal's past, present, and future (e.g. 'is Raja vaccinated?' or 'when is the next booster due?'); and a symptom analyzer where a keeper describes a symptom and the AI retrieves a likely diagnosis, recommended actions, and medications by combining the animal's own history with medical knowledge from the web. Retrieval is powered by on-device embeddings and a vector search layer, so answers stay grounded in the zoo's real records.",
       screenshots: [
         "projects/zoo-intelligence/zoo-1.png",
         "projects/zoo-intelligence/zoo-2.png",
@@ -58,17 +58,17 @@ export const projects: Project[] = [
         { name: "Multi-Agent Architecture", icon: "images/agents.svg" },
       ],
       highlights: [
-        "Multilingual logging — keepers record daily food, cleaning, and vaccination notes as free text in any language, auto-structured into the database",
-        "Animal timelines — a complete, chronological life history of every animal's care and health events",
-        "Smart alerts — automatic reminders for upcoming vaccinations, deworming, and health checks",
-        "AI chatbot — ask about any animal's past, present, or future, like 'is Raja vaccinated?' or 'when is the next booster?'",
-        "AI symptom analyzer — describe a symptom and get a likely diagnosis, immediate actions, and medications drawn from past records and the web",
+        "Multilingual logging: keepers record daily food, cleaning, and vaccination notes as free text in any language, auto-structured into the database",
+        "Animal timelines: a complete, chronological life history of every animal's care and health events",
+        "Smart alerts: automatic reminders for upcoming vaccinations, deworming, and health checks",
+        "AI chatbot: ask about any animal's past, present, or future, like 'is Raja vaccinated?' or 'when is the next booster?'",
+        "AI symptom analyzer: describe a symptom and get a likely diagnosis, immediate actions, and medications drawn from past records and the web",
       ],
     },
   },
   {
     title: "Service Intelligence Layer",
-    description: "Enterprise service-intelligence SaaS for industrial machine fleets. Unifies dealer performance, machine lifecycle, predictive maintenance, and spare-parts revenue across four role-based dashboards — admin, dealer, field engineer, and customer.",
+    description: "Enterprise service-intelligence SaaS for industrial machine fleets. Unifies dealer performance, machine lifecycle, predictive maintenance, and spare-parts revenue across four role-based dashboards for admin, dealer, field engineer, and customer.",
     tools: ["Next.js", "TypeScript", "Prisma", "Enterprise SaaS"],
     image: "images/aristasil.png",
     link: "https://aristasil.netlify.app/",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     source: "Freelance",
     details: {
       longDescription:
-        "The Arista Service Intelligence Layer (SIL) is a production-grade enterprise SaaS platform that gives an industrial machine manufacturer end-to-end visibility over its entire service ecosystem. It ships four distinct, role-based experiences behind role-based access control: a national 'control tower' for the brand admin (network-wide machine, dealer, service, and inventory KPIs), an operations cockpit for dealer managers (customers, engineers, service scheduling, and stock), a mobile-optimised app for field engineers (digital multi-step job execution and safety checks), and a self-service portal for customers (machine status, service history, and breakdown requests). The platform tracks each machine as a 'digital passport' — full service history, parts replaced, remaining life, running hours, and next service — while an AI insights hub clusters recurring breakdowns, surfaces emerging failure patterns, and generates service summaries. Inventory and forecasting modules tie service data to spare-parts demand, stockout risk, and missed-service revenue leakage, turning field operations into measurable, auditable business intelligence.",
+        "The Arista Service Intelligence Layer (SIL) is a production-grade enterprise SaaS platform that gives an industrial machine manufacturer end-to-end visibility over its entire service ecosystem. It ships four distinct, role-based experiences behind role-based access control: a national 'control tower' for the brand admin (network-wide machine, dealer, service, and inventory KPIs), an operations cockpit for dealer managers (customers, engineers, service scheduling, and stock), a mobile-optimised app for field engineers (digital multi-step job execution and safety checks), and a self-service portal for customers (machine status, service history, and breakdown requests). The platform tracks each machine as a 'digital passport' (full service history, parts replaced, remaining life, running hours, and next service) while an AI insights hub clusters recurring breakdowns, surfaces emerging failure patterns, and generates service summaries. Inventory and forecasting modules tie service data to spare-parts demand, stockout risk, and missed-service revenue leakage, turning field operations into measurable, auditable business intelligence.",
       screenshots: [
         "images/aristasil.png",
         "projects/service-intelligence-layer/sil-1.png",
@@ -97,18 +97,18 @@ export const projects: Project[] = [
         { name: "Zod", icon: "https://cdn.simpleicons.org/zod/3E67B1" },
       ],
       highlights: [
-        "Four role-based experiences — admin control tower, dealer operations cockpit, field-engineer mobile app, and customer portal, all behind RBAC",
-        "Installed-base 'digital passport' — per-machine service history, parts used, remaining life, running hours, and next service due",
-        "Dealer performance leaderboard — service compliance, on-time rate, repeat issues, stockouts, and revenue per machine with traffic-light scoring",
-        "Predictive maintenance & AI insights — automated breakdown clustering, emerging-failure detection, and AI service summaries",
-        "Inventory & spare-parts revenue protection — demand forecasting, stockout-risk alerts, and missed-service revenue-leakage tracking",
-        "Digital field service — engineers run multi-step job execution with safety checks; customers raise and track breakdown requests",
+        "Four role-based experiences: admin control tower, dealer operations cockpit, field-engineer mobile app, and customer portal, all behind RBAC",
+        "Installed-base 'digital passport': per-machine service history, parts used, remaining life, running hours, and next service due",
+        "Dealer performance leaderboard: service compliance, on-time rate, repeat issues, stockouts, and revenue per machine with traffic-light scoring",
+        "Predictive maintenance & AI insights: automated breakdown clustering, emerging-failure detection, and AI service summaries",
+        "Inventory & spare-parts revenue protection: demand forecasting, stockout-risk alerts, and missed-service revenue-leakage tracking",
+        "Digital field service: engineers run multi-step job execution with safety checks; customers raise and track breakdown requests",
       ],
     },
   },
   {
     title: "CA AI",
-    description: "AI-powered vouching and compliance engine for CA firms — automated invoice extraction, GST reconciliation, tax-notice responses, and audit documentation with near-zero manual effort.",
+    description: "AI-powered vouching and compliance engine for CA firms, with automated invoice extraction, GST reconciliation, tax-notice responses, and audit documentation at near-zero manual effort.",
     tools: ["AI Integration", "Audit Tech", "React", "Node"],
     image: "projects/vouching/caai-1.png",
     link: "https://vouching-frontend.onrender.com/",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     source: "Freelance",
     details: {
       longDescription:
-        "CA AI is a Smart Vouching & Compliance Intelligence Engine built for chartered accountancy audit workflows. It uses AI to extract data from thousands of invoices, reconcile GST returns, and flag compliance exceptions with near-zero manual effort — turning what was days of tedious ledger work into an automated, auditable pipeline. Beyond vouching, it bundles a suite of AI assistants that reconcile GST filings, draft responses to tax notices, and generate complete audit working papers, so CAs can focus on judgement instead of formatting.",
+        "CA AI is a Smart Vouching & Compliance Intelligence Engine built for chartered accountancy audit workflows. It uses AI to extract data from thousands of invoices, reconcile GST returns, and flag compliance exceptions with near-zero manual effort, turning what was days of tedious ledger work into an automated, auditable pipeline. Beyond vouching, it bundles a suite of AI assistants that reconcile GST filings, draft responses to tax notices, and generate complete audit working papers, so CAs can focus on judgement instead of formatting.",
       screenshots: [
         "projects/vouching/caai-1.png",
         "projects/vouching/caai-2.png",
@@ -134,10 +134,10 @@ export const projects: Project[] = [
         { name: "SQLAlchemy", icon: "https://cdn.simpleicons.org/sqlalchemy/D71F00" },
       ],
       highlights: [
-        "Smart Vouching Engine — AI invoice extraction, GST reconciliation & compliance flagging across thousands of invoices with near-zero manual effort",
-        "AI GST Reconciliation — automated GSTR-1 vs 3B vs 2B matching with ITC gap reports and a filing-readiness dashboard",
-        "AI Tax Notice Response Assistant — reads GST and income-tax notices, maps provisions, and drafts structured responses for CA review",
-        "AI Audit Documentation Assistant — auto-generates working papers, checklists, and summaries from client uploads with zero formatting effort",
+        "Smart Vouching Engine: AI invoice extraction, GST reconciliation & compliance flagging across thousands of invoices with near-zero manual effort",
+        "AI GST Reconciliation: automated GSTR-1 vs 3B vs 2B matching with ITC gap reports and a filing-readiness dashboard",
+        "AI Tax Notice Response Assistant: reads GST and income-tax notices, maps provisions, and drafts structured responses for CA review",
+        "AI Audit Documentation Assistant: auto-generates working papers, checklists, and summaries from client uploads with zero formatting effort",
       ],
     },
   },
@@ -151,7 +151,7 @@ export const projects: Project[] = [
     source: "Freelance",
     details: {
       longDescription:
-        "ExcelDash transforms plain, hard-to-read spreadsheets into clean, interactive KPI dashboards. Drop in an Excel or CSV file and it instantly detects your metrics and segments, then renders them as KPI cards, trend lines, bar charts, and distributions. It runs in two modes: Standard Mode converts your tabular data straight into dashboards and charts, while AI Mode goes further — surfacing deeper metrics, trends, and a strategic summary of what the numbers actually mean. A built-in AI Data Assistant lets you ask questions about your dataset in plain English and get grounded answers, and a one-click Data Dossier packages everything into a shareable business report.",
+        "ExcelDash transforms plain, hard-to-read spreadsheets into clean, interactive KPI dashboards. Drop in an Excel or CSV file and it instantly detects your metrics and segments, then renders them as KPI cards, trend lines, bar charts, and distributions. It runs in two modes: Standard Mode converts your tabular data straight into dashboards and charts, while AI Mode goes further, surfacing deeper metrics, trends, and a strategic summary of what the numbers actually mean. A built-in AI Data Assistant lets you ask questions about your dataset in plain English and get grounded answers, and a one-click Data Dossier packages everything into a shareable business report.",
       screenshots: [
         "projects/exceldash/exceldash-1.png",
         "projects/exceldash/exceldash-2.png",
@@ -169,10 +169,10 @@ export const projects: Project[] = [
         { name: "Framer Motion", icon: "https://cdn.simpleicons.org/framer/ffffff" },
       ],
       highlights: [
-        "Standard Mode — instantly converts raw Excel/CSV tables into clean KPI cards, charts, and dashboards",
-        "AI Mode — surfaces deeper metrics, trends, and an auto-generated strategic summary of your data",
-        "AI Data Assistant — ask questions in plain English and get answers grounded in your uploaded dataset",
-        "Data Dossier — one-click, shareable business report with a strategic overview and primary findings",
+        "Standard Mode: instantly converts raw Excel/CSV tables into clean KPI cards, charts, and dashboards",
+        "AI Mode: surfaces deeper metrics, trends, and an auto-generated strategic summary of your data",
+        "AI Data Assistant: ask questions in plain English and get answers grounded in your uploaded dataset",
+        "Data Dossier: one-click, shareable business report with a strategic overview and primary findings",
       ],
     },
   },
@@ -186,7 +186,7 @@ export const projects: Project[] = [
     source: "Freelance",
     details: {
       longDescription:
-        "Web Asset Scraper pulls every downloadable asset out of any public web page. Paste a URL and it crawls the page — handling modern, JavaScript-heavy sites via a stealth Puppeteer engine — then returns all of its images, PDFs, and documents in a live preview grid. You can sort and filter the results by type, size, or name, select exactly what you need, and export in whatever format suits your workflow: a bundled ZIP of the raw files, or a CSV/Excel manifest of every asset and its metadata. It's built as a fast, no-friction tool for designers, researchers, and developers who need to grab a site's media in seconds instead of saving files one by one.",
+        "Web Asset Scraper pulls every downloadable asset out of any public web page. Paste a URL and it crawls the page, handling modern, JavaScript-heavy sites via a stealth Puppeteer engine, then returns all of its images, PDFs, and documents in a live preview grid. You can sort and filter the results by type, size, or name, select exactly what you need, and export in whatever format suits your workflow: a bundled ZIP of the raw files, or a CSV/Excel manifest of every asset and its metadata. It's built as a fast, no-friction tool for designers, researchers, and developers who need to grab a site's media in seconds instead of saving files one by one.",
       screenshots: ["images/web_asset_scraper.png"],
       techStack: [
         { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
@@ -199,7 +199,7 @@ export const projects: Project[] = [
       highlights: [
         "Extracts every image, PDF, and document from any public URL in one click",
         "Live preview grid with sorting and filtering by type, size, and name",
-        "Bulk export as ZIP, CSV, or Excel — grab all assets or just the ones you select",
+        "Bulk export as ZIP, CSV, or Excel: grab all assets or just the ones you select",
         "Stealth Puppeteer crawling reliably handles modern, JavaScript-heavy sites",
       ],
     },
@@ -246,7 +246,7 @@ export const projects: Project[] = [
     source: "Freelance",
     details: {
       longDescription:
-        "A polished marketing and lead-generation website for Atlantic Awning, a New England manufacturer of custom awnings and canopies. Built on WordPress with Elementor, it showcases residential and commercial product lines through rich galleries, service-area pages, and clear calls to action — all wrapped in a fully responsive layout engineered to hold up on any device.",
+        "A polished marketing and lead-generation website for Atlantic Awning, a New England manufacturer of custom awnings and canopies. Built on WordPress with Elementor, it showcases residential and commercial product lines through rich galleries, service-area pages, and clear calls to action, all wrapped in a fully responsive layout that holds up on any device.",
       screenshots: ["images/atlantic_awning.png"],
       techStack: [
         { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/ffffff" },
@@ -271,7 +271,7 @@ export const projects: Project[] = [
     source: "Oriens DevSecOps",
     details: {
       longDescription:
-        "The corporate website for Arista AI, a strategic AI consultancy. It presents the firm's positioning — guiding businesses from AI strategy through to full production deployment — with structured service breakdowns, case-study framing, and conversion-focused contact flows, built on WordPress and Elementor for fast content iteration.",
+        "The corporate website for Arista AI, a strategic AI consultancy. It presents the firm's positioning, guiding businesses from AI strategy through to full production deployment, with structured service breakdowns, case-study framing, and conversion-focused contact flows, built on WordPress and Elementor for fast content iteration.",
       screenshots: ["images/arista_ai.png"],
       techStack: [
         { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/ffffff" },

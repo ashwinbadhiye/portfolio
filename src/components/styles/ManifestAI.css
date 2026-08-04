@@ -2,8 +2,9 @@
 .manifest-section {
   position: relative;
   z-index: 1;
-  background: radial-gradient(ellipse at top, rgba(94, 234, 212, 0.06), transparent 60%), var(--backgroundColor);
-  padding: 100px 0 0;
+  /* fully transparent so the site-wide fixed particle backdrop shows through */
+  background: transparent;
+  padding: 160px 0 0; /* extra breathing room before the section starts */
   overflow: hidden;
 }
 
@@ -180,6 +181,7 @@
 }
 
 .manifest-feature-card {
+  position: relative; /* anchor for the BorderBeam overlay */
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 16px;
@@ -210,72 +212,74 @@
 
 /* ── Built With strip ── */
 .manifest-built-with-strip {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 48px 0;
+  padding: 64px 0;
   text-align: center;
 }
 
 .manifest-built-with-title {
-  font-size: 12px;
-  letter-spacing: 2.5px;
+  font-size: 13px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: #555;
-  margin: 0 0 30px;
+  color: var(--accentColor);
+  opacity: 0.85;
+  margin: 0 0 34px;
 }
 
 .manifest-tech-row {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: 40px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .manifest-tech-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  opacity: 0.65;
-  transition: opacity 0.25s ease;
+  gap: 13px;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
 
 .manifest-tech-item:hover {
-  opacity: 1;
+  border-color: rgba(94, 234, 212, 0.5);
+  background: rgba(94, 234, 212, 0.05);
+  transform: translateY(-4px);
 }
 
 .manifest-tech-icon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
-  filter: brightness(0.9);
 }
 
 .manifest-tech-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2px;
+  gap: 3px;
 }
 
 .manifest-tech-name {
   font-size: 14px;
-  font-weight: 500;
-  color: #ddd;
+  font-weight: 600;
+  color: #f0f2f5;
   line-height: 1;
 }
 
 .manifest-tech-desc {
   font-size: 11px;
-  color: #666;
-  line-height: 1;
+  color: #8b95a3;
+  line-height: 1.2;
 }
 
 /* ── Philosophy strip ── */
 .manifest-philosophy {
-  background: rgba(255, 255, 255, 0.02);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 60px 0 70px;
+  background: transparent;
+  padding: 40px 0 80px;
   text-align: center;
 }
 
@@ -286,10 +290,11 @@
 }
 
 .manifest-philosophy-title {
-  font-size: 14px;
-  letter-spacing: 2px;
+  font-size: 13px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: #777;
+  color: var(--accentColor);
+  opacity: 0.85;
   margin: 0 0 26px;
 }
 
@@ -303,11 +308,17 @@
 
 .manifest-tag {
   font-size: 13px;
-  color: #ccc;
+  color: #e6edf3;
   padding: 14px 18px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.manifest-tag:hover {
+  border-color: rgba(94, 234, 212, 0.4);
+  background: rgba(94, 234, 212, 0.05);
 }
 
 /* ── CTA ── */

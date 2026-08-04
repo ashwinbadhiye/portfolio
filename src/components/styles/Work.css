@@ -2,7 +2,7 @@
 .work-section {
   position: relative;
   z-index: 1;
-  background-color: var(--backgroundColor);
+  background-color: transparent; /* let site-wide particle backdrop show through */
   padding: 100px 0;
 }
 

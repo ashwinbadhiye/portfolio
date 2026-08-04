@@ -1,0 +1,54 @@
+.shine-border {
+  position: relative;
+  border-radius: var(--sb-radius, 18px);
+}
+
+/* The moving border lives on an absolutely-positioned overlay. A conic gradient
+   is painted then masked so only a thin ring at the edge remains visible. */
+.shine-border-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: var(--sb-border, 1.5px);
+  background: conic-gradient(
+    from var(--sb-angle, 0deg),
+    transparent 0%,
+    var(--sb-colors, #5eead4) 12%,
+    transparent 30%
+  );
+  /* Cut out the interior so only the padding (the border) shows. */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: shine-border-spin var(--sb-duration, 12s) linear infinite;
+  pointer-events: none;
+}
+
+@property --sb-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes shine-border-spin {
+  to {
+    --sb-angle: 360deg;
+  }
+}
+
+/* Fallback for browsers without @property: rotate the whole overlay instead. */
+@supports not (background: conic-gradient(from var(--sb-angle), red, blue)) {
+  .shine-border-glow {
+    animation-name: shine-border-rotate;
+  }
+  @keyframes shine-border-rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

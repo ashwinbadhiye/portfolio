@@ -77,7 +77,7 @@ const Work = () => {
             AI, Web &amp; Mobile <span>Apps</span>
           </h3>
           <p className="work-group-desc">
-            AI-powered products and full-stack applications I designed, built, and shipped end to end — from a published mobile app to enterprise SaaS platforms.
+            AI-powered products and full-stack applications I designed, built, and shipped, from a published mobile app to enterprise SaaS platforms.
           </p>
           <div className="projects-grid">
             {appProjects.map((project, index) => renderCard(project, index))}

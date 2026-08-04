@@ -1,0 +1,28 @@
+.animated-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.animated-beam-flow {
+  animation-name: animated-beam-dash;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animated-beam-dash {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-beam-flow {
+    animation: none;
+  }
+}

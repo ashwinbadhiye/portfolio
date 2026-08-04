@@ -1,0 +1,55 @@
+.border-beam {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--bb-radius, 16px);
+  padding: var(--bb-size, 1.5px);
+  pointer-events: none;
+  /* A tight bright beam (small angular slice) that rotates around the box. */
+  background: conic-gradient(
+    from var(--bb-angle, 0deg),
+    transparent 0deg,
+    transparent 340deg,
+    var(--bb-from) 350deg,
+    var(--bb-to) 358deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: border-beam-spin var(--bb-duration, 6s) linear infinite;
+  animation-delay: var(--bb-delay, 0s);
+}
+
+@property --bb-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-beam-spin {
+  to {
+    --bb-angle: 360deg;
+  }
+}
+
+@supports not (background: conic-gradient(from var(--bb-angle), red, blue)) {
+  .border-beam {
+    animation-name: border-beam-rotate;
+  }
+  @keyframes border-beam-rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-beam {
+    animation: none;
+  }
+}
