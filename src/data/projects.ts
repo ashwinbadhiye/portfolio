@@ -142,6 +142,73 @@ export const projects: Project[] = [
     },
   },
   {
+    title: "Smart Inbox",
+    description: "AI ticket-triage dashboard for support, HR, and sales inboxes. Classifies incoming messages, matches them against a knowledge base, and drafts a reply in real time, with a full pipeline view from raw ticket to processed result.",
+    tools: ["AI Integration", "Automation", "React", "Node"],
+    image: "projects/smart-inbox/inbox-1.png",
+    link: "https://hrapp-ba10.onrender.com/",
+    tags: ["web apps", "ai and automation"],
+    source: "Freelance",
+    details: {
+      longDescription:
+        "Smart Inbox is an AI-powered message-triage pipeline built to automate first-line handling of support, HR, and sales inboxes. Any incoming message is classified by category and priority, matched against a knowledge base of company policies, and answered with a drafted reply, all through a live API call rather than canned responses. A dashboard shows every stage of the pipeline: raw input tickets straight from the source, live testing where a new message can be typed in and watched as it is classified and answered in real time, and a processed-results table with the category, priority, summary, and draft reply generated for each ticket in the last batch run. It turns the repetitive first pass of triaging an inbox, reading, tagging, and replying, into something that happens automatically, with a human free to review and refine before anything goes out.",
+      screenshots: [
+        "projects/smart-inbox/inbox-1.png",
+        "projects/smart-inbox/inbox-2.png",
+        "projects/smart-inbox/inbox-3.png",
+      ],
+      techStack: [
+        { name: "OpenAI", icon: "images/openai.svg" },
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
+        { name: "REST APIs", icon: "images/document.svg" },
+      ],
+      highlights: [
+        "Live message testing: type any support, HR, or sales message and watch it get classified, matched against a knowledge base, and answered by a real API call",
+        "Automatic triage: every ticket is tagged with a category (Support, HR, Sales) and a priority level (High, Normal) without manual sorting",
+        "Grounded draft replies: responses are generated from the matched knowledge base rather than free-form guessing, then queued for human review",
+        "Full pipeline visibility: input tickets, processed results, and a rerun-batch option all in one dashboard, so nothing about the automation is a black box",
+      ],
+    },
+  },
+  {
+    title: "InterviewPrepAI",
+    description: "AI-native interview-prep platform that builds a personalized mock interview from a candidate profile, drawing from a curated question bank across coding, technical, and behavioral topics before generating anything fresh.",
+    tools: ["AI Integration", "RAG", "Next.js", "React"],
+    image: "projects/interview-prep-ai/prep-1.png",
+    link: "https://ashwinterview.netlify.app/",
+    tags: ["web apps", "ai and automation"],
+    source: "Freelance",
+    details: {
+      longDescription:
+        "InterviewPrepAI is a full interview-preparation platform that turns a candidate's real profile, skills, experience level, and stack, into a personalized mock interview instead of a generic quiz. A candidate dashboard tracks every past session with a score breakdown across coding, technical, and behavioral questions, and a new mock interview can be started at any time. Underneath sits a large, curated question bank (100+ questions across topics like RAG and vector databases, FastAPI and Python, React and Next.js, SQL, system design, and more), organized by difficulty and type, that the interview draws from first, before generating anything new, so sessions stay fast, consistent, and cost-efficient. During a live session, each question is answered directly in the browser, including a code editor for coding questions, and the candidate can browse the full question bank independently with model answers to study by topic and mark questions as reviewed.",
+      screenshots: [
+        "projects/interview-prep-ai/prep-1.png",
+        "projects/interview-prep-ai/prep-2.png",
+        "projects/interview-prep-ai/prep-3.png",
+      ],
+      techStack: [
+        { name: "OpenAI", icon: "images/openai.svg" },
+        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi/009688" },
+        { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
+        { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
+        { name: "Vector DB (RAG)", icon: "images/vector.svg" },
+      ],
+      highlights: [
+        "Personalized mock interviews: generated from a candidate's real skills, stack, and experience level rather than a fixed generic set",
+        "Curated question bank first: 100+ human-written questions across 13+ topics, matched by relevance before any question is freshly generated, keeping sessions fast and consistent",
+        "Full session flow: coding questions in an in-browser editor, technical and behavioral questions, and a scored breakdown once a session completes",
+        "Standalone question bank: every question is browsable by topic, difficulty, and type, each with a model answer, so it doubles as a self-study reference",
+      ],
+    },
+  },
+  {
     title: "ExcelDash",
     description: "Turns boring spreadsheets into interactive KPI dashboards. Upload Excel or CSV for instant charts and metrics, switch to AI mode for deeper trends, and ask a built-in chatbot questions about your data.",
     tools: ["AI Integration", "Dashboard", "Next.js", "React"],

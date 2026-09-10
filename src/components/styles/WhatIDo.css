@@ -52,7 +52,7 @@
 
 .what-noTouch:hover,
 .what-content-active {
-  min-height: 67%;
+  min-height: 78%;
   padding: 40px 50px;
 }
 
@@ -228,16 +228,23 @@
 }
 .what-content-flex {
   display: flex;
-  gap: 5px;
+  gap: 6px;
+  row-gap: 6px;
   flex-wrap: wrap;
 }
 .what-tags {
   font-size: 13px;
   font-weight: 400;
   padding: 2px 7px;
-  background-color: rgba(var(--inkRGB), 0.15);
-  border: 1px solid rgba(var(--inkRGB), 0.3);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 30px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.what-tags:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 @media only screen and (max-width: 1600px) {
   .what-box h2 {
@@ -302,7 +309,7 @@
   }
   .what-noTouch:hover,
   .what-content-active {
-    min-height: 67%;
+    min-height: 78%;
     padding: 50px;
   }
 

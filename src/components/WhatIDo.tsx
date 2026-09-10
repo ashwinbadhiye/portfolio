@@ -96,6 +96,7 @@ I develop AI systems that automate internal processes and customer workflows, he
                 <div className="what-tags">LLMs &amp; agents</div>
                 <div className="what-tags">Workflow design</div>
                 <div className="what-tags">RAG &amp; retrieval</div>
+                <div className="what-tags">n8n</div>
                 <div className="what-tags">Evals &amp; guardrails</div>
                 <div className="what-tags">Integrations</div>
                 <div className="what-tags">Product strategy</div>

@@ -16,3 +16,10 @@
   position: absolute;
   inset: 0;
 }
+
+/* Kinetic grid canvas: same fill behavior. */
+.site-particles canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+}

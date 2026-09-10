@@ -35,7 +35,7 @@ const TechStackCloud = () => {
   }, []);
 
   return (
-    <section className="tsc-section" id="stack-cloud" ref={sectionRef}>
+    <section className="tsc-section" id="skills" ref={sectionRef}>
       <Particles quantity={70} color="#5eead4" className="tsc-particles" />
 
       <div className="tsc-inner section-container">

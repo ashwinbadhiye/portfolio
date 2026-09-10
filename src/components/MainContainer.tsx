@@ -11,7 +11,7 @@ import WhatIDo from "./WhatIDo";
 import Work from "./Work";
 import TechStackCloud from "./TechStackCloud";
 import CurrentlyBuilding from "./CurrentlyBuilding";
-import SiteParticles from "./SiteParticles";
+import SiteKineticGrid from "./SiteKineticGrid";
 import ErrorBoundary from "./ErrorBoundary";
 import setSplitText from "./utils/splitText";
 
@@ -38,8 +38,10 @@ const MainContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="container-main">
-      <ErrorBoundary name="SiteParticles">
-        <SiteParticles />
+      {/* Experimental: kinetic dot-grid background (cursor warp + click ripple).
+          To revert, swap back to <SiteParticles /> below. */}
+      <ErrorBoundary name="SiteKineticGrid">
+        <SiteKineticGrid />
       </ErrorBoundary>
       <Cursor />
       <Navbar />

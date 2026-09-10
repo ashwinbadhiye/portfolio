@@ -71,34 +71,56 @@
   margin-bottom: 20px;
 }
 
+/* Custom store buttons (not the vendor badge artwork): identical size for
+   both stores, fully transparent by default, solid black on hover. Built
+   this way because Apple's and Google's official badge assets have
+   different internal padding/aspect ratios and never size to match. */
 .manifest-store-badge {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
+  width: 190px;
+  height: 54px;
+  padding: 0 18px;
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
   text-decoration: none;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
 }
 
 .manifest-store-badge:hover {
   transform: scale(1.04);
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Size the badges by height so both stores read as equal-sized buttons.
-   The Apple SVG has almost no internal padding, while Google's PNG bakes
-   in a wide transparent margin, so the Play badge is set taller to make
-   the actual buttons match visually. */
-.manifest-badge-img {
+.manifest-badge-icon {
   display: block;
-  width: auto;
+  width: 26px;
+  height: 26px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
-.manifest-badge-img--apple {
-  height: 44px;
+.manifest-badge-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.15;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
-.manifest-badge-img--play {
-  height: 66px;
+.manifest-badge-text small {
+  font-size: 10px;
+  font-weight: 400;
+  color: #cfcfcf;
 }
 
 .manifest-credit {
@@ -182,16 +204,17 @@
 
 .manifest-feature-card {
   position: relative; /* anchor for the BorderBeam overlay */
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 16px;
   padding: 28px 24px;
   text-align: left;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .manifest-feature-card:hover {
-  border-color: var(--accentColor);
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-6px);
 }
 
@@ -238,15 +261,15 @@
   align-items: center;
   gap: 13px;
   padding: 14px 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 14px;
   transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
 
 .manifest-tech-item:hover {
-  border-color: rgba(94, 234, 212, 0.5);
-  background: rgba(94, 234, 212, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.8);
   transform: translateY(-4px);
 }
 
@@ -311,14 +334,14 @@
   color: #e6edf3;
   padding: 14px 18px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   transition: border-color 0.25s ease, background 0.25s ease;
 }
 
 .manifest-tag:hover {
-  border-color: rgba(94, 234, 212, 0.4);
-  background: rgba(94, 234, 212, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 /* ── CTA ── */
@@ -352,8 +375,16 @@
   color: #000;
 }
 
+.manifest-btn-primary:hover {
+  color: #000;
+}
+
 .manifest-btn-secondary {
   border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.manifest-btn-secondary:hover {
   color: #fff;
 }
 
@@ -419,12 +450,30 @@
     padding: 36px 0;
   }
   .manifest-tech-row {
-    gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 16px;
+  }
+  .manifest-tech-item {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .manifest-tech-info {
+    align-items: center;
   }
   .manifest-philosophy {
     padding: 40px 20px;
   }
   .manifest-tags {
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+  }
+  .manifest-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }

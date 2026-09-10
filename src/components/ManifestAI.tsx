@@ -142,10 +142,14 @@ const ManifestAI = () => {
             className="manifest-store-badge"
           >
             <img
-              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-              alt="Download on the App Store"
-              className="manifest-badge-img manifest-badge-img--apple"
+              src="https://cdn.simpleicons.org/apple/ffffff"
+              alt=""
+              className="manifest-badge-icon"
             />
+            <span className="manifest-badge-text">
+              <small>Download on the</small>
+              App Store
+            </span>
           </a>
           <a
             href="https://play.google.com/store/apps/details?id=com.aristaai.manifestai"
@@ -154,10 +158,14 @@ const ManifestAI = () => {
             className="manifest-store-badge"
           >
             <img
-              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-              alt="Get it on Google Play"
-              className="manifest-badge-img manifest-badge-img--play"
+              src="https://cdn.simpleicons.org/googleplay/ffffff"
+              alt=""
+              className="manifest-badge-icon"
             />
+            <span className="manifest-badge-text">
+              <small>Get it on</small>
+              Google Play
+            </span>
           </a>
         </div>
 

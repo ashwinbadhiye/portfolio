@@ -85,9 +85,15 @@
   gap: 10px;
   padding: 28px 24px;
   min-height: 130px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.015);
+  background: transparent;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.cb-flow:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .cb-node {
@@ -120,7 +126,8 @@
 
 .cb-node-label {
   font-size: 11px;
-  color: #9aa4b2;
+  font-weight: 500;
+  color: #cdd4dd;
   white-space: nowrap;
 }
 
@@ -139,7 +146,15 @@
 }
 
 .cb-job {
-  background: rgba(255, 255, 255, 0.02);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.cb-job:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .cb-job-inner {

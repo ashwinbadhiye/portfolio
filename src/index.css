@@ -8,19 +8,17 @@
   line-height: 1.5;
   scroll-behavior: smooth;
   color-scheme: light dark;
-  color: #eae5ec;
+  color: #f5f3f7;
   background-color: var(--backgroundColor);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   --accentColor: #5eead4;
   --backgroundColor: #0a0e17;
-  --textColor: #eae5ec;
+  --textColor: #f5f3f7;
   --vh: 100vh;
   --vh: 100svh;
 }
