@@ -136,9 +136,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(circle at 50% 45%, rgba(94, 234, 212, 0.06), transparent 60%),
-    rgba(255, 255, 255, 0.1);
+  background: radial-gradient(circle at 50% 45%, rgba(94, 234, 212, 0.06), transparent 60%);
 }
 
 .tsc-cloud {
