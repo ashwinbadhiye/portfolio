@@ -47,6 +47,17 @@ const Career = () => {
                 ExcelDash turns raw spreadsheets into interactive KPI dashboards
                 with an AI insights mode and a data chatbot.
               </li>
+              <li>
+                Smart Inbox is an AI ticket-triage dashboard that classifies
+                incoming support, HR, and sales messages, matches them against
+                a knowledge base, and drafts replies in real time.
+              </li>
+              <li>
+                InterviewPrepAI is an AI-native mock interview platform that
+                builds personalized sessions from a candidate's profile,
+                drawing from a curated question bank across coding, technical,
+                and behavioral topics.
+              </li>
               Alongside these I build supporting web apps and tools, like a web
               asset scraper, using React Native, Next.js, React, TypeScript,
               Python/FastAPI, and OpenAI.
